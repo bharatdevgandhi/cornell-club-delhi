@@ -26,6 +26,13 @@
   <main id="app">
     <p id="boot" class="center muted">Loading…</p>
 
+    <!-- Shown to visitors if the admin has never been set up -->
+    <section id="not-setup" class="panel narrow" hidden>
+      <h1>Admin isn’t set up yet</h1>
+      <p>The site’s editing area hasn’t been switched on. Please check back soon.</p>
+      <p><button type="button" class="link-btn dark" id="show-setup">I’m the site owner: set it up</button></p>
+    </section>
+
     <!-- One-time setup: stores the repo token, encrypted with the shared password -->
     <section id="setup" class="panel narrow" hidden>
       <h1>Set up the admin</h1>

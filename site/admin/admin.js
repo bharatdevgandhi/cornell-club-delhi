@@ -32,7 +32,7 @@
 
   // ------------------------------------------------------------------ utils
   function show(id) {
-    ['boot', 'setup', 'login', 'editor'].forEach(function (s) { $('#' + s).hidden = s !== id; });
+    ['boot', 'not-setup', 'setup', 'login', 'editor'].forEach(function (s) { $('#' + s).hidden = s !== id; });
     $('#bar-actions').hidden = id !== 'editor';
   }
   function toast(text, isError) {
@@ -226,7 +226,7 @@
       return r.json();
     }).then(function (a) {
       auth = a;
-      if (!auth) return startSetup();
+      if (!auth) return show('not-setup');
       var saved = null;
       try { saved = JSON.parse(sessionStorage.getItem(SESSION_KEY) || 'null'); } catch (e) { /* storage blocked */ }
       if (saved && saved.token && saved.owner === auth.owner && saved.repo === auth.repo) {
@@ -250,6 +250,8 @@
       f.repo.value = parts.length > 1 ? parts[0] : host;
     }
   }
+
+  $('#show-setup').addEventListener('click', startSetup);
 
   $('#setup-form').addEventListener('submit', function (e) {
     e.preventDefault();

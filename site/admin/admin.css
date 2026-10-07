@@ -27,6 +27,7 @@ h1 { font-size: 1.6rem; } h2 { font-size: 1.35rem; } h3 { font-size: 1.05rem; }
 .bar-brand small { font-size: .75rem; letter-spacing: .08em; text-transform: uppercase; }
 .bar-actions { display: flex; gap: 16px; align-items: center; }
 .bar-actions a, .link-btn { color: var(--white); font: inherit; font-weight: 600; font-size: .95rem; }
+.link-btn.dark { color: var(--link-blue); }
 .link-btn { background: none; border: 0; padding: 0; text-decoration: underline; cursor: pointer; }
 
 main { max-width: 1000px; margin: 0 auto; padding: 24px 16px 64px; }
