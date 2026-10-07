@@ -589,6 +589,12 @@ svg_body = f"""<svg class="ccd-loader" xmlns="http://www.w3.org/2000/svg" viewBo
 with open(os.path.join(site, "assets", "ccd-skyline-loader.svg"), "w", encoding="utf-8") as fh:
     fh.write('<?xml version="1.0" encoding="utf-8"?>\n' + svg_body)
 
+# Page-transition variant: same drawing and keyframes, whole loop compressed so the
+# skyline, seal and rule complete in ~1.5s (keyframe percentages scale with duration).
+T_TRANSITION = 2600
+with open(os.path.join(site, "assets", "ccd-skyline-transition.svg"), "w", encoding="utf-8") as fh:
+    fh.write('<?xml version="1.0" encoding="utf-8"?>\n' + svg_body.replace(f"{T}ms", f"{T_TRANSITION}ms"))
+
 inline = svg_body.replace('<svg class="ccd-loader"', '<svg class="ccd-loader" aria-hidden="true" focusable="false"', 1)
 html = f"""<!doctype html>
 <html lang="en">

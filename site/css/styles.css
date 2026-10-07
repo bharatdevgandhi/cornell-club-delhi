@@ -312,3 +312,18 @@ p { margin: 0 0 1em; }
 .post-body #post-content p { font-size: 1.1rem; }
 .footer-social { display: flex; flex-wrap: wrap; gap: 12px; margin: 8px 0 0; }
 .person .person-detail { font-size: .9rem; margin: 0; }
+
+/* ---------- Page transition: Delhi skyline loader ---------- */
+.page-loader {
+  position: fixed; inset: 0; z-index: 1000;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px;
+  padding: 16px; background: var(--white); color: var(--dark-gray);
+  opacity: 1; visibility: visible; transition: opacity .35s ease, visibility 0s linear 0s;
+  /* Failsafe: never leave a page covered if the script doesn't run. */
+  animation: page-loader-failsafe .35s ease 4s forwards;
+}
+.page-loader img { width: min(100%, 645px); height: auto; }
+.page-loader-label { font-size: .8rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+.page-loader.done { opacity: 0; visibility: hidden; transition: opacity .35s ease, visibility 0s linear .35s; animation: none; }
+.page-loader.leaving { opacity: 1; visibility: visible; transition: opacity .15s ease; animation: none; }
+@keyframes page-loader-failsafe { to { opacity: 0; visibility: hidden; } }

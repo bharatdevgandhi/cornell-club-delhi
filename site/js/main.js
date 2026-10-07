@@ -2,6 +2,40 @@
   var CATEGORIES = { social: 'Social', professional: 'Professional', students: 'Students' };
   var SOCIAL_LABELS = { linkedin: 'LinkedIn', instagram: 'Instagram', facebook: 'Facebook', whatsapp: 'WhatsApp' };
 
+  // ---------- Page transitions: Delhi skyline loader ----------
+  // Each page opens behind the loader; it lifts once content is rendered, the page
+  // has loaded, and the skyline + seal + rule sequence (~1.5s) has played.
+  var loader = document.getElementById('page-loader');
+  var reduceMotion = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var MIN_SHOW = reduceMotion ? 300 : 1500;
+  var pageLoaded = new Promise(function (resolve) {
+    if (document.readyState === 'complete') resolve();
+    else window.addEventListener('load', resolve);
+  });
+  function hideLoader() {
+    if (!loader) return;
+    setTimeout(function () {
+      loader.classList.remove('leaving');
+      loader.classList.add('done');
+    }, Math.max(0, MIN_SHOW - performance.now()));
+  }
+  if (loader) {
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest && e.target.closest('a[href]');
+      if (!a || e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+      if ((a.target && a.target !== '_self') || a.hasAttribute('download')) return;
+      var url = new URL(a.href, location.href);
+      if (url.origin !== location.origin) return;
+      if (url.pathname === location.pathname && url.search === location.search) return;   // same-page anchors
+      e.preventDefault();
+      loader.classList.remove('done');
+      loader.classList.add('leaving');
+      setTimeout(function () { location.href = url.href; }, reduceMotion ? 0 : 150);
+    });
+    // Back/forward restores a page from cache with the loader showing; lift it.
+    window.addEventListener('pageshow', function (e) { if (e.persisted) { loader.classList.remove('leaving'); loader.classList.add('done'); } });
+  }
+
   // ---------- Mobile navigation ----------
   var toggle = document.querySelector('.nav-toggle');
   var nav = document.getElementById('site-nav');
@@ -54,7 +88,10 @@
   }
 
   Promise.all([load('site.json', null), load('events.json', []), load('posts.json', [])])
-    .then(function (res) { render(res[0], res[1] || [], res[2] || []); });
+    .then(function (res) { render(res[0], res[1] || [], res[2] || []); })
+    .catch(function (e) { if (window.console) console.error(e); })
+    .then(function () { return pageLoaded; })
+    .then(hideLoader);
 
   function render(site, eventsData, postsData) {
     // ---------- Editable text ----------
