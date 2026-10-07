@@ -1,0 +1,1611 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Loading State</title>
+  <link rel="icon" type="image/svg+xml" href="assets/cornell_seal_simple_web_b31b1b.svg">
+  <style>
+    :root { --dark-gray: #222222; --white: #FFFFFF; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; min-height: 100vh; display: grid; place-items: center;
+      background: var(--white); color: var(--dark-gray);
+      font-family: "Helvetica Neue", Helvetica, Arial, system-ui, sans-serif;
+      padding: 16px;
+    }
+    .loading { display: flex; flex-direction: column; align-items: center; gap: 16px; width: 100%; max-width: 645.05px; }
+    .loading svg { width: 100%; height: auto; display: block; }
+    .loading-label { font-size: .85rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+  </style>
+</head>
+<body>
+  <div class="loading" role="status" aria-live="polite">
+    <svg class="ccd-loader" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 645.05 270.39" width="645.05" height="270.39" color="#222222">
+  <style>
+    /* Loop 8000ms: ground + landmarks draw on 0–2800ms (stagger 250ms, structure then detail),
+       mark 2400–3800ms, carnelian rule 3800–4600ms, hold, fade 7500–8000ms, loop. */
+    .ccd-loader .st0 { fill: #231F20; }
+    .ccd-loader .skyline { fill: none; stroke: currentColor; stroke-linejoin: round; stroke-linecap: butt; }
+    .ccd-loader .skyline { --o: 1.15px; --d: .6px; }
+    .ccd-loader .ground { stroke-width: var(--o); }
+    .ccd-loader .o { stroke-width: calc(var(--o) / var(--s, 1)); }
+    .ccd-loader .d { stroke-width: calc(var(--d) / var(--s, 1)); }
+    .ccd-loader .skyline path { animation: none 8000ms linear infinite both; }
+    .ccd-loader .skyline .ground { animation-name: ccd-ground; }
+    .ccd-loader .b1 .o { animation-name: ccd-o1; }
+    .ccd-loader .b1 .d { animation-name: ccd-d1; }
+    .ccd-loader .b2 .o { animation-name: ccd-o2; }
+    .ccd-loader .b2 .d { animation-name: ccd-d2; }
+    .ccd-loader .b3 .o { animation-name: ccd-o3; }
+    .ccd-loader .b3 .d { animation-name: ccd-d3; }
+    .ccd-loader .b4 .o { animation-name: ccd-o4; }
+    .ccd-loader .b4 .d { animation-name: ccd-d4; }
+    .ccd-loader .b5 .o { animation-name: ccd-o5; }
+    .ccd-loader .b5 .d { animation-name: ccd-d5; }
+    .ccd-loader .scene { animation: ccd-scene 8000ms linear infinite both; }
+    .ccd-loader .mark, .ccd-loader .rule { transform-box: view-box; }
+    .ccd-loader .mark { transform-origin: 322.52px 56px; animation: ccd-mark 8000ms linear infinite both; }
+    .ccd-loader .rule { transform-origin: 322.52px 112px; animation: ccd-rule 8000ms linear infinite both; }
+
+    @keyframes ccd-ground {
+      0% { stroke-dasharray: 1.05 1.05; stroke-dashoffset: 1.05; animation-timing-function: cubic-bezier(0.55, 0, 0.25, 1); }
+      35% { stroke-dasharray: 1.05 1.05; stroke-dashoffset: 0; animation-timing-function: step-end; }
+      35.013%, 100% { stroke-dasharray: none; stroke-dashoffset: 0; }
+    }
+    @keyframes ccd-o1 {
+      0% { stroke-dasharray: 1.05 1.05; stroke-dashoffset: 1.05; animation-timing-function: cubic-bezier(0.55, 0, 0.25, 1); }
+      15.75% { stroke-dasharray: 1.05 1.05; stroke-dashoffset: 0; animation-timing-function: step-end; }
+      15.762%, 100% { stroke-dasharray: none; stroke-dashoffset: 0; }
+    }
+    @keyframes ccd-d1 {
+      0%, 6.75% { stroke-dasharray: 1.05 1.05; stroke-dashoffset: 1.05; animation-timing-function: cubic-bezier(0.55, 0, 0.25, 1); }
+      22.5% { stroke-dasharray: 1.05 1.05; stroke-dashoffset: 0; animation-timing-function: step-end; }
+      22.512%, 100% { stroke-dasharray: none; stroke-dashoffset: 0; }
+    }
+    @keyframes ccd-o2 {
+      0%, 3.125% { stroke-dasharray: 1.05 1.05; stroke-dashoffset: 1.05; animation-timing-function: cubic-bezier(0.55, 0, 0.25, 1); }
+      18.875% { stroke-dasharray: 1.05 1.05; stroke-dashoffset: 0; animation-timing-function: step-end; }
+      18.887%, 100% { stroke-dasharray: none; stroke-dashoffset: 0; }
+    }
+    @keyframes ccd-d2 {
+      0%, 9.875% { stroke-dasharray: 1.05 1.05; stroke-dashoffset: 1.05; animation-timing-function: cubic-bezier(0.55, 0, 0.25, 1); }
+      25.625% { stroke-dasharray: 1.05 1.05; stroke-dashoffset: 0; animation-timing-function: step-end; }
+      25.638%, 100% { stroke-dasharray: none; stroke-dashoffset: 0; }
+    }
+    @keyframes ccd-o3 {
+      0%, 6.25% { stroke-dasharray: 1.05 1.05; stroke-dashoffset: 1.05; animation-timing-function: cubic-bezier(0.55, 0, 0.25, 1); }
+      22% { stroke-dasharray: 1.05 1.05; stroke-dashoffset: 0; animation-timing-function: step-end; }
+      22.012%, 100% { stroke-dasharray: none; stroke-dashoffset: 0; }
+    }
+    @keyframes ccd-d3 {
+      0%, 13% { stroke-dasharray: 1.05 1.05; stroke-dashoffset: 1.05; animation-timing-function: cubic-bezier(0.55, 0, 0.25, 1); }
+      28.75% { stroke-dasharray: 1.05 1.05; stroke-dashoffset: 0; animation-timing-function: step-end; }
+      28.763%, 100% { stroke-dasharray: none; stroke-dashoffset: 0; }
+    }
+    @keyframes ccd-o4 {
+      0%, 9.375% { stroke-dasharray: 1.05 1.05; stroke-dashoffset: 1.05; animation-timing-function: cubic-bezier(0.55, 0, 0.25, 1); }
+      25.125% { stroke-dasharray: 1.05 1.05; stroke-dashoffset: 0; animation-timing-function: step-end; }
+      25.138%, 100% { stroke-dasharray: none; stroke-dashoffset: 0; }
+    }
+    @keyframes ccd-d4 {
+      0%, 16.125% { stroke-dasharray: 1.05 1.05; stroke-dashoffset: 1.05; animation-timing-function: cubic-bezier(0.55, 0, 0.25, 1); }
+      31.875% { stroke-dasharray: 1.05 1.05; stroke-dashoffset: 0; animation-timing-function: step-end; }
+      31.888%, 100% { stroke-dasharray: none; stroke-dashoffset: 0; }
+    }
+    @keyframes ccd-o5 {
+      0%, 12.5% { stroke-dasharray: 1.05 1.05; stroke-dashoffset: 1.05; animation-timing-function: cubic-bezier(0.55, 0, 0.25, 1); }
+      28.25% { stroke-dasharray: 1.05 1.05; stroke-dashoffset: 0; animation-timing-function: step-end; }
+      28.263%, 100% { stroke-dasharray: none; stroke-dashoffset: 0; }
+    }
+    @keyframes ccd-d5 {
+      0%, 19.25% { stroke-dasharray: 1.05 1.05; stroke-dashoffset: 1.05; animation-timing-function: cubic-bezier(0.55, 0, 0.25, 1); }
+      35% { stroke-dasharray: 1.05 1.05; stroke-dashoffset: 0; animation-timing-function: step-end; }
+      35.013%, 100% { stroke-dasharray: none; stroke-dashoffset: 0; }
+    }
+    @keyframes ccd-mark {
+      0%, 30% { opacity: 0; transform: scale(0.92); animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1); }
+      47.5%, 100% { opacity: 1; transform: scale(1); }
+    }
+    @keyframes ccd-rule {
+      0%, 47.5% { transform: scaleX(0); animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1); }
+      57.5%, 100% { transform: scaleX(1); }
+    }
+    @keyframes ccd-scene {
+      0%, 93.75% { opacity: 1; }
+      100% { opacity: 0; }
+    }
+
+    /* Keep lines legible when the graphic is drawn small. */
+    @media (max-width: 480px) {
+      .ccd-loader .skyline { --o: 1.7px; --d: .95px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .ccd-loader .skyline path, .ccd-loader .mark, .ccd-loader .rule, .ccd-loader .scene { animation: none; }
+    }
+  </style>
+  <g class="scene">
+  <g class="skyline">
+    <path class="ground" pathLength="1" d="M6,262.39H639.05"/>
+    <g class="b b1" data-name="Qutub Minar">
+      <g transform="translate(-50 36.39) scale(1)" style="--s: 1">
+        <path class="o" pathLength="1" d="M56,222H100V226H56Z"/>
+        <path class="o" pathLength="1" d="M59,219H97V222H59Z"/>
+        <path class="o" pathLength="1" d="M62.8,219L66.78,156"/>
+        <path class="o" pathLength="1" d="M93.2,219L89.22,156"/>
+        <path class="o" pathLength="1" d="M66.78,156L63.89,151"/>
+        <path class="o" pathLength="1" d="M89.22,156L92.11,151"/>
+        <path class="o" pathLength="1" d="M63.89,149H92.11V151H63.89Z"/>
+        <path class="o" pathLength="1" d="M63.89,145.4H92.11"/>
+        <path class="o" pathLength="1" d="M63.89,149V145.4"/>
+        <path class="o" pathLength="1" d="M92.11,149V145.4"/>
+        <path class="o" pathLength="1" d="M67.22,149L69.12,119"/>
+        <path class="o" pathLength="1" d="M88.78,149L86.88,119"/>
+        <path class="o" pathLength="1" d="M69.12,119L66.23,114"/>
+        <path class="o" pathLength="1" d="M86.88,119L89.77,114"/>
+        <path class="o" pathLength="1" d="M66.23,112H89.77V114H66.23Z"/>
+        <path class="o" pathLength="1" d="M66.23,108.4H89.77"/>
+        <path class="o" pathLength="1" d="M66.23,112V108.4"/>
+        <path class="o" pathLength="1" d="M89.77,112V108.4"/>
+        <path class="o" pathLength="1" d="M69.56,112L70.82,92"/>
+        <path class="o" pathLength="1" d="M86.44,112L85.18,92"/>
+        <path class="o" pathLength="1" d="M70.82,92L67.94,87"/>
+        <path class="o" pathLength="1" d="M85.18,92L88.06,87"/>
+        <path class="o" pathLength="1" d="M67.94,85H88.06V87H67.94Z"/>
+        <path class="o" pathLength="1" d="M67.94,81.4H88.06"/>
+        <path class="o" pathLength="1" d="M67.94,85V81.4"/>
+        <path class="o" pathLength="1" d="M88.06,85V81.4"/>
+        <path class="o" pathLength="1" d="M71.26,85L72.02,73"/>
+        <path class="o" pathLength="1" d="M84.74,85L83.98,73"/>
+        <path class="o" pathLength="1" d="M72.02,73L69.14,68"/>
+        <path class="o" pathLength="1" d="M83.98,73L86.86,68"/>
+        <path class="o" pathLength="1" d="M69.14,66H86.86V68H69.14Z"/>
+        <path class="o" pathLength="1" d="M69.14,62.4H86.86"/>
+        <path class="o" pathLength="1" d="M69.14,66V62.4"/>
+        <path class="o" pathLength="1" d="M86.86,66V62.4"/>
+        <path class="o" pathLength="1" d="M72.46,66L73.28,53"/>
+        <path class="o" pathLength="1" d="M83.54,66L82.72,53"/>
+        <path class="o" pathLength="1" d="M73.28,53L70.4,48"/>
+        <path class="o" pathLength="1" d="M82.72,53L85.6,48"/>
+        <path class="o" pathLength="1" d="M70.4,46H85.6V48H70.4Z"/>
+        <path class="o" pathLength="1" d="M70.4,42.4H85.6"/>
+        <path class="o" pathLength="1" d="M70.4,46V42.4"/>
+        <path class="o" pathLength="1" d="M85.6,46V42.4"/>
+        <path class="o" pathLength="1" d="M74.33,46L74.33,42.5H81.67V46"/>
+        <path class="d" pathLength="1" d="M65.33,219L68.65,156"/>
+        <path class="d" pathLength="1" d="M67.87,219L70.52,156"/>
+        <path class="d" pathLength="1" d="M70.4,219L72.39,156"/>
+        <path class="d" pathLength="1" d="M72.93,219L74.26,156"/>
+        <path class="d" pathLength="1" d="M75.47,219L76.13,156"/>
+        <path class="d" pathLength="1" d="M78,219L78,156"/>
+        <path class="d" pathLength="1" d="M80.53,219L79.87,156"/>
+        <path class="d" pathLength="1" d="M83.07,219L81.74,156"/>
+        <path class="d" pathLength="1" d="M85.6,219L83.61,156"/>
+        <path class="d" pathLength="1" d="M88.13,219L85.48,156"/>
+        <path class="d" pathLength="1" d="M90.67,219L87.35,156"/>
+        <path class="d" pathLength="1" d="M63.6,206.4H92.4"/>
+        <path class="d" pathLength="1" d="M63.7,204H92.3"/>
+        <path class="d" pathLength="1" d="M64.4,205.2Q65.05,204.75 65.7,205.2Q66.35,205.65 67,205.2Q67.65,204.75 68.3,205.2Q68.95,205.65 69.6,205.2Q70.25,204.75 70.9,205.2Q71.55,205.65 72.2,205.2Q72.85,204.75 73.5,205.2Q74.15,205.65 74.8,205.2Q75.45,204.75 76.1,205.2Q76.75,205.65 77.4,205.2Q78.05,204.75 78.7,205.2Q79.35,205.65 80,205.2Q80.65,204.75 81.3,205.2Q81.95,205.65 82.6,205.2Q83.25,204.75 83.9,205.2Q84.55,205.65 85.2,205.2Q85.85,204.75 86.5,205.2Q87.15,205.65 87.8,205.2Q88.45,204.75 89.1,205.2Q89.75,205.65 90.4,205.2"/>
+        <path class="d" pathLength="1" d="M64.67,189.39H91.33"/>
+        <path class="d" pathLength="1" d="M64.77,186.99H91.23"/>
+        <path class="d" pathLength="1" d="M65.47,188.19Q66.12,187.74 66.77,188.19Q67.42,188.64 68.07,188.19Q68.72,187.74 69.37,188.19Q70.02,188.64 70.67,188.19Q71.32,187.74 71.97,188.19Q72.62,188.64 73.27,188.19Q73.92,187.74 74.57,188.19Q75.22,188.64 75.87,188.19Q76.52,187.74 77.17,188.19Q77.82,188.64 78.47,188.19Q79.12,187.74 79.77,188.19Q80.42,188.64 81.07,188.19Q81.72,187.74 82.37,188.19Q83.02,188.64 83.67,188.19Q84.32,187.74 84.97,188.19Q85.62,188.64 86.27,188.19Q86.92,187.74 87.57,188.19Q88.22,188.64 88.87,188.19Q89.52,187.74 90.17,188.19"/>
+        <path class="d" pathLength="1" d="M65.74,172.38H90.26"/>
+        <path class="d" pathLength="1" d="M65.84,169.98H90.16"/>
+        <path class="d" pathLength="1" d="M66.54,171.18Q67.19,170.73 67.84,171.18Q68.49,171.63 69.14,171.18Q69.79,170.73 70.44,171.18Q71.09,171.63 71.74,171.18Q72.39,170.73 73.04,171.18Q73.69,171.63 74.34,171.18Q74.99,170.73 75.64,171.18Q76.29,171.63 76.94,171.18Q77.59,170.73 78.24,171.18Q78.89,171.63 79.54,171.18Q80.19,170.73 80.84,171.18Q81.49,171.63 82.14,171.18Q82.79,170.73 83.44,171.18Q84.09,171.63 84.74,171.18Q85.39,170.73 86.04,171.18Q86.69,171.63 87.34,171.18Q87.99,170.73 88.64,171.18"/>
+        <path class="d" pathLength="1" d="M75,219V210C75,207.8 76.8,206.4 78,206C79.2,206.4 81,207.8 81,210V219"/>
+        <path class="d" pathLength="1" d="M64.04,152.7C64.04,151.96 64.72,151.48 65.18,151.35C65.63,151.48 66.31,151.96 66.31,152.7"/>
+        <path class="d" pathLength="1" d="M66.61,152.7C66.61,151.96 67.29,151.48 67.74,151.35C68.19,151.48 68.87,151.96 68.87,152.7"/>
+        <path class="d" pathLength="1" d="M69.17,152.7C69.17,151.96 69.85,151.48 70.31,151.35C70.76,151.48 71.44,151.96 71.44,152.7"/>
+        <path class="d" pathLength="1" d="M71.74,152.7C71.74,151.96 72.42,151.48 72.87,151.35C73.32,151.48 74,151.96 74,152.7"/>
+        <path class="d" pathLength="1" d="M74.3,152.7C74.3,151.96 74.98,151.48 75.44,151.35C75.89,151.48 76.57,151.96 76.57,152.7"/>
+        <path class="d" pathLength="1" d="M76.87,152.7C76.87,151.96 77.55,151.48 78,151.35C78.45,151.48 79.13,151.96 79.13,152.7"/>
+        <path class="d" pathLength="1" d="M79.43,152.7C79.43,151.96 80.11,151.48 80.56,151.35C81.02,151.48 81.7,151.96 81.7,152.7"/>
+        <path class="d" pathLength="1" d="M82,152.7C82,151.96 82.68,151.48 83.13,151.35C83.58,151.48 84.26,151.96 84.26,152.7"/>
+        <path class="d" pathLength="1" d="M84.56,152.7C84.56,151.96 85.24,151.48 85.69,151.35C86.15,151.48 86.83,151.96 86.83,152.7"/>
+        <path class="d" pathLength="1" d="M87.13,152.7C87.13,151.96 87.81,151.48 88.26,151.35C88.71,151.48 89.39,151.96 89.39,152.7"/>
+        <path class="d" pathLength="1" d="M89.69,152.7C89.69,151.96 90.37,151.48 90.82,151.35C91.28,151.48 91.96,151.96 91.96,152.7"/>
+        <path class="d" pathLength="1" d="M65.49,154.9C65.49,154.08 66.16,153.55 66.6,153.4C67.05,153.55 67.72,154.08 67.72,154.9"/>
+        <path class="d" pathLength="1" d="M68.02,154.9C68.02,154.08 68.69,153.55 69.14,153.4C69.58,153.55 70.25,154.08 70.25,154.9"/>
+        <path class="d" pathLength="1" d="M70.55,154.9C70.55,154.08 71.22,153.55 71.67,153.4C72.11,153.55 72.78,154.08 72.78,154.9"/>
+        <path class="d" pathLength="1" d="M73.08,154.9C73.08,154.08 73.75,153.55 74.2,153.4C74.65,153.55 75.32,154.08 75.32,154.9"/>
+        <path class="d" pathLength="1" d="M75.62,154.9C75.62,154.08 76.29,153.55 76.73,153.4C77.18,153.55 77.85,154.08 77.85,154.9"/>
+        <path class="d" pathLength="1" d="M78.15,154.9C78.15,154.08 78.82,153.55 79.27,153.4C79.71,153.55 80.38,154.08 80.38,154.9"/>
+        <path class="d" pathLength="1" d="M80.68,154.9C80.68,154.08 81.35,153.55 81.8,153.4C82.25,153.55 82.92,154.08 82.92,154.9"/>
+        <path class="d" pathLength="1" d="M83.22,154.9C83.22,154.08 83.89,153.55 84.33,153.4C84.78,153.55 85.45,154.08 85.45,154.9"/>
+        <path class="d" pathLength="1" d="M85.75,154.9C85.75,154.08 86.42,153.55 86.86,153.4C87.31,153.55 87.98,154.08 87.98,154.9"/>
+        <path class="d" pathLength="1" d="M88.28,154.9C88.28,154.08 88.95,153.55 89.4,153.4C89.84,153.55 90.51,154.08 90.51,154.9"/>
+        <path class="d" pathLength="1" d="M65.29,149V145.4"/>
+        <path class="d" pathLength="1" d="M66.69,149V145.4"/>
+        <path class="d" pathLength="1" d="M68.09,149V145.4"/>
+        <path class="d" pathLength="1" d="M69.49,149V145.4"/>
+        <path class="d" pathLength="1" d="M70.89,149V145.4"/>
+        <path class="d" pathLength="1" d="M72.29,149V145.4"/>
+        <path class="d" pathLength="1" d="M73.69,149V145.4"/>
+        <path class="d" pathLength="1" d="M75.09,149V145.4"/>
+        <path class="d" pathLength="1" d="M76.49,149V145.4"/>
+        <path class="d" pathLength="1" d="M77.89,149V145.4"/>
+        <path class="d" pathLength="1" d="M79.29,149V145.4"/>
+        <path class="d" pathLength="1" d="M80.69,149V145.4"/>
+        <path class="d" pathLength="1" d="M82.09,149V145.4"/>
+        <path class="d" pathLength="1" d="M83.49,149V145.4"/>
+        <path class="d" pathLength="1" d="M84.89,149V145.4"/>
+        <path class="d" pathLength="1" d="M86.29,149V145.4"/>
+        <path class="d" pathLength="1" d="M87.69,149V145.4"/>
+        <path class="d" pathLength="1" d="M89.09,149V145.4"/>
+        <path class="d" pathLength="1" d="M90.49,149V145.4"/>
+        <path class="d" pathLength="1" d="M69.38,149L70.89,119"/>
+        <path class="d" pathLength="1" d="M71.53,149L72.67,119"/>
+        <path class="d" pathLength="1" d="M73.69,149L74.45,119"/>
+        <path class="d" pathLength="1" d="M75.84,149L76.22,119"/>
+        <path class="d" pathLength="1" d="M78,149L78,119"/>
+        <path class="d" pathLength="1" d="M80.16,149L79.78,119"/>
+        <path class="d" pathLength="1" d="M82.31,149L81.55,119"/>
+        <path class="d" pathLength="1" d="M84.47,149L83.33,119"/>
+        <path class="d" pathLength="1" d="M86.62,149L85.11,119"/>
+        <path class="d" pathLength="1" d="M67.79,140H88.21"/>
+        <path class="d" pathLength="1" d="M67.89,137.6H88.11"/>
+        <path class="d" pathLength="1" d="M68.59,138.8Q69.24,138.35 69.89,138.8Q70.54,139.25 71.19,138.8Q71.84,138.35 72.49,138.8Q73.14,139.25 73.79,138.8Q74.44,138.35 75.09,138.8Q75.74,139.25 76.39,138.8Q77.04,138.35 77.69,138.8Q78.34,139.25 78.99,138.8Q79.64,138.35 80.29,138.8Q80.94,139.25 81.59,138.8Q82.24,138.35 82.89,138.8Q83.54,139.25 84.19,138.8Q84.84,138.35 85.49,138.8Q86.14,139.25 86.79,138.8"/>
+        <path class="d" pathLength="1" d="M68.51,128.6H87.49"/>
+        <path class="d" pathLength="1" d="M68.61,126.2H87.39"/>
+        <path class="d" pathLength="1" d="M69.31,127.4Q69.96,126.95 70.61,127.4Q71.26,127.85 71.91,127.4Q72.56,126.95 73.21,127.4Q73.86,127.85 74.51,127.4Q75.16,126.95 75.81,127.4Q76.46,127.85 77.11,127.4Q77.76,126.95 78.41,127.4Q79.06,127.85 79.71,127.4Q80.36,126.95 81.01,127.4Q81.66,127.85 82.31,127.4Q82.96,126.95 83.61,127.4Q84.26,127.85 84.91,127.4Q85.56,126.95 86.21,127.4"/>
+        <path class="d" pathLength="1" d="M66.38,115.7C66.38,114.96 67.08,114.48 67.54,114.35C68,114.48 68.7,114.96 68.7,115.7"/>
+        <path class="d" pathLength="1" d="M69,115.7C69,114.96 69.69,114.48 70.15,114.35C70.62,114.48 71.31,114.96 71.31,115.7"/>
+        <path class="d" pathLength="1" d="M71.61,115.7C71.61,114.96 72.31,114.48 72.77,114.35C73.23,114.48 73.93,114.96 73.93,115.7"/>
+        <path class="d" pathLength="1" d="M74.23,115.7C74.23,114.96 74.92,114.48 75.38,114.35C75.85,114.48 76.54,114.96 76.54,115.7"/>
+        <path class="d" pathLength="1" d="M76.84,115.7C76.84,114.96 77.54,114.48 78,114.35C78.46,114.48 79.16,114.96 79.16,115.7"/>
+        <path class="d" pathLength="1" d="M79.46,115.7C79.46,114.96 80.15,114.48 80.62,114.35C81.08,114.48 81.77,114.96 81.77,115.7"/>
+        <path class="d" pathLength="1" d="M82.07,115.7C82.07,114.96 82.77,114.48 83.23,114.35C83.69,114.48 84.39,114.96 84.39,115.7"/>
+        <path class="d" pathLength="1" d="M84.69,115.7C84.69,114.96 85.38,114.48 85.85,114.35C86.31,114.48 87,114.96 87,115.7"/>
+        <path class="d" pathLength="1" d="M87.3,115.7C87.3,114.96 88,114.48 88.46,114.35C88.92,114.48 89.62,114.96 89.62,115.7"/>
+        <path class="d" pathLength="1" d="M67.82,117.9C67.82,117.08 68.51,116.55 68.96,116.4C69.42,116.55 70.11,117.08 70.11,117.9"/>
+        <path class="d" pathLength="1" d="M70.41,117.9C70.41,117.08 71.09,116.55 71.55,116.4C72,116.55 72.69,117.08 72.69,117.9"/>
+        <path class="d" pathLength="1" d="M72.99,117.9C72.99,117.08 73.67,116.55 74.13,116.4C74.58,116.55 75.27,117.08 75.27,117.9"/>
+        <path class="d" pathLength="1" d="M75.57,117.9C75.57,117.08 76.25,116.55 76.71,116.4C77.17,116.55 77.85,117.08 77.85,117.9"/>
+        <path class="d" pathLength="1" d="M78.15,117.9C78.15,117.08 78.83,116.55 79.29,116.4C79.75,116.55 80.43,117.08 80.43,117.9"/>
+        <path class="d" pathLength="1" d="M80.73,117.9C80.73,117.08 81.42,116.55 81.87,116.4C82.33,116.55 83.01,117.08 83.01,117.9"/>
+        <path class="d" pathLength="1" d="M83.31,117.9C83.31,117.08 84,116.55 84.45,116.4C84.91,116.55 85.59,117.08 85.59,117.9"/>
+        <path class="d" pathLength="1" d="M85.89,117.9C85.89,117.08 86.58,116.55 87.04,116.4C87.49,116.55 88.18,117.08 88.18,117.9"/>
+        <path class="d" pathLength="1" d="M67.63,112V108.4"/>
+        <path class="d" pathLength="1" d="M69.03,112V108.4"/>
+        <path class="d" pathLength="1" d="M70.43,112V108.4"/>
+        <path class="d" pathLength="1" d="M71.83,112V108.4"/>
+        <path class="d" pathLength="1" d="M73.23,112V108.4"/>
+        <path class="d" pathLength="1" d="M74.63,112V108.4"/>
+        <path class="d" pathLength="1" d="M76.03,112V108.4"/>
+        <path class="d" pathLength="1" d="M77.43,112V108.4"/>
+        <path class="d" pathLength="1" d="M78.83,112V108.4"/>
+        <path class="d" pathLength="1" d="M80.23,112V108.4"/>
+        <path class="d" pathLength="1" d="M81.63,112V108.4"/>
+        <path class="d" pathLength="1" d="M83.03,112V108.4"/>
+        <path class="d" pathLength="1" d="M84.43,112V108.4"/>
+        <path class="d" pathLength="1" d="M85.83,112V108.4"/>
+        <path class="d" pathLength="1" d="M87.23,112V108.4"/>
+        <path class="d" pathLength="1" d="M88.63,112V108.4"/>
+        <path class="d" pathLength="1" d="M71.67,112L72.62,92"/>
+        <path class="d" pathLength="1" d="M73.78,112L74.41,92"/>
+        <path class="d" pathLength="1" d="M75.89,112L76.21,92"/>
+        <path class="d" pathLength="1" d="M78,112L78,92"/>
+        <path class="d" pathLength="1" d="M80.11,112L79.79,92"/>
+        <path class="d" pathLength="1" d="M82.22,112L81.59,92"/>
+        <path class="d" pathLength="1" d="M84.33,112L83.38,92"/>
+        <path class="d" pathLength="1" d="M70.19,102H85.81"/>
+        <path class="d" pathLength="1" d="M70.29,99.6H85.71"/>
+        <path class="d" pathLength="1" d="M70.99,100.8Q71.64,100.35 72.29,100.8Q72.94,101.25 73.59,100.8Q74.24,100.35 74.89,100.8Q75.54,101.25 76.19,100.8Q76.84,100.35 77.49,100.8Q78.14,101.25 78.79,100.8Q79.44,100.35 80.09,100.8Q80.74,101.25 81.39,100.8Q82.04,100.35 82.69,100.8Q83.34,101.25 83.99,100.8"/>
+        <path class="d" pathLength="1" d="M68.09,88.7C68.09,87.96 68.75,87.48 69.19,87.35C69.64,87.48 70.3,87.96 70.3,88.7"/>
+        <path class="d" pathLength="1" d="M70.6,88.7C70.6,87.96 71.27,87.48 71.71,87.35C72.15,87.48 72.82,87.96 72.82,88.7"/>
+        <path class="d" pathLength="1" d="M73.12,88.7C73.12,87.96 73.78,87.48 74.23,87.35C74.67,87.48 75.33,87.96 75.33,88.7"/>
+        <path class="d" pathLength="1" d="M75.63,88.7C75.63,87.96 76.3,87.48 76.74,87.35C77.19,87.48 77.85,87.96 77.85,88.7"/>
+        <path class="d" pathLength="1" d="M78.15,88.7C78.15,87.96 78.81,87.48 79.26,87.35C79.7,87.48 80.37,87.96 80.37,88.7"/>
+        <path class="d" pathLength="1" d="M80.67,88.7C80.67,87.96 81.33,87.48 81.77,87.35C82.22,87.48 82.88,87.96 82.88,88.7"/>
+        <path class="d" pathLength="1" d="M83.18,88.7C83.18,87.96 83.85,87.48 84.29,87.35C84.73,87.48 85.4,87.96 85.4,88.7"/>
+        <path class="d" pathLength="1" d="M85.7,88.7C85.7,87.96 86.36,87.48 86.81,87.35C87.25,87.48 87.91,87.96 87.91,88.7"/>
+        <path class="d" pathLength="1" d="M69.53,90.9C69.53,90.08 70.18,89.55 70.61,89.4C71.04,89.55 71.69,90.08 71.69,90.9"/>
+        <path class="d" pathLength="1" d="M71.99,90.9C71.99,90.08 72.64,89.55 73.07,89.4C73.51,89.55 74.16,90.08 74.16,90.9"/>
+        <path class="d" pathLength="1" d="M74.46,90.9C74.46,90.08 75.1,89.55 75.54,89.4C75.97,89.55 76.62,90.08 76.62,90.9"/>
+        <path class="d" pathLength="1" d="M76.92,90.9C76.92,90.08 77.57,89.55 78,89.4C78.43,89.55 79.08,90.08 79.08,90.9"/>
+        <path class="d" pathLength="1" d="M79.38,90.9C79.38,90.08 80.03,89.55 80.46,89.4C80.9,89.55 81.54,90.08 81.54,90.9"/>
+        <path class="d" pathLength="1" d="M81.84,90.9C81.84,90.08 82.49,89.55 82.93,89.4C83.36,89.55 84.01,90.08 84.01,90.9"/>
+        <path class="d" pathLength="1" d="M84.31,90.9C84.31,90.08 84.96,89.55 85.39,89.4C85.82,89.55 86.47,90.08 86.47,90.9"/>
+        <path class="d" pathLength="1" d="M69.34,85V81.4"/>
+        <path class="d" pathLength="1" d="M70.74,85V81.4"/>
+        <path class="d" pathLength="1" d="M72.14,85V81.4"/>
+        <path class="d" pathLength="1" d="M73.54,85V81.4"/>
+        <path class="d" pathLength="1" d="M74.94,85V81.4"/>
+        <path class="d" pathLength="1" d="M76.34,85V81.4"/>
+        <path class="d" pathLength="1" d="M77.74,85V81.4"/>
+        <path class="d" pathLength="1" d="M79.14,85V81.4"/>
+        <path class="d" pathLength="1" d="M80.54,85V81.4"/>
+        <path class="d" pathLength="1" d="M81.94,85V81.4"/>
+        <path class="d" pathLength="1" d="M83.34,85V81.4"/>
+        <path class="d" pathLength="1" d="M84.74,85V81.4"/>
+        <path class="d" pathLength="1" d="M86.14,85V81.4"/>
+        <path class="d" pathLength="1" d="M71.49,81.4H84.51"/>
+        <path class="d" pathLength="1" d="M71.59,79H84.41"/>
+        <path class="d" pathLength="1" d="M71.79,76.6H84.21"/>
+        <path class="d" pathLength="1" d="M71.89,74.2H84.11"/>
+        <path class="d" pathLength="1" d="M76.2,84.8V79C76.2,77.57 77.28,76.66 78,76.4C78.72,76.66 79.8,77.57 79.8,79V84.8"/>
+        <path class="d" pathLength="1" d="M69.29,69.7C69.29,68.96 69.96,68.48 70.4,68.35C70.85,68.48 71.52,68.96 71.52,69.7"/>
+        <path class="d" pathLength="1" d="M71.82,69.7C71.82,68.96 72.49,68.48 72.94,68.35C73.38,68.48 74.05,68.96 74.05,69.7"/>
+        <path class="d" pathLength="1" d="M74.35,69.7C74.35,68.96 75.02,68.48 75.47,68.35C75.91,68.48 76.58,68.96 76.58,69.7"/>
+        <path class="d" pathLength="1" d="M76.88,69.7C76.88,68.96 77.55,68.48 78,68.35C78.45,68.48 79.12,68.96 79.12,69.7"/>
+        <path class="d" pathLength="1" d="M79.42,69.7C79.42,68.96 80.09,68.48 80.53,68.35C80.98,68.48 81.65,68.96 81.65,69.7"/>
+        <path class="d" pathLength="1" d="M81.95,69.7C81.95,68.96 82.62,68.48 83.06,68.35C83.51,68.48 84.18,68.96 84.18,69.7"/>
+        <path class="d" pathLength="1" d="M84.48,69.7C84.48,68.96 85.15,68.48 85.6,68.35C86.04,68.48 86.71,68.96 86.71,69.7"/>
+        <path class="d" pathLength="1" d="M70.73,71.9C70.73,71.08 71.38,70.55 71.82,70.4C72.25,70.55 72.9,71.08 72.9,71.9"/>
+        <path class="d" pathLength="1" d="M73.2,71.9C73.2,71.08 73.85,70.55 74.29,70.4C74.72,70.55 75.38,71.08 75.38,71.9"/>
+        <path class="d" pathLength="1" d="M75.68,71.9C75.68,71.08 76.33,70.55 76.76,70.4C77.2,70.55 77.85,71.08 77.85,71.9"/>
+        <path class="d" pathLength="1" d="M78.15,71.9C78.15,71.08 78.8,70.55 79.24,70.4C79.67,70.55 80.32,71.08 80.32,71.9"/>
+        <path class="d" pathLength="1" d="M80.62,71.9C80.62,71.08 81.28,70.55 81.71,70.4C82.15,70.55 82.8,71.08 82.8,71.9"/>
+        <path class="d" pathLength="1" d="M83.1,71.9C83.1,71.08 83.75,70.55 84.18,70.4C84.62,70.55 85.27,71.08 85.27,71.9"/>
+        <path class="d" pathLength="1" d="M70.54,66V62.4"/>
+        <path class="d" pathLength="1" d="M71.94,66V62.4"/>
+        <path class="d" pathLength="1" d="M73.34,66V62.4"/>
+        <path class="d" pathLength="1" d="M74.74,66V62.4"/>
+        <path class="d" pathLength="1" d="M76.14,66V62.4"/>
+        <path class="d" pathLength="1" d="M77.54,66V62.4"/>
+        <path class="d" pathLength="1" d="M78.94,66V62.4"/>
+        <path class="d" pathLength="1" d="M80.34,66V62.4"/>
+        <path class="d" pathLength="1" d="M81.74,66V62.4"/>
+        <path class="d" pathLength="1" d="M83.14,66V62.4"/>
+        <path class="d" pathLength="1" d="M84.54,66V62.4"/>
+        <path class="d" pathLength="1" d="M85.94,66V62.4"/>
+        <path class="d" pathLength="1" d="M72.67,62.75H83.33"/>
+        <path class="d" pathLength="1" d="M72.77,60.35H83.23"/>
+        <path class="d" pathLength="1" d="M72.91,58.85H83.09"/>
+        <path class="d" pathLength="1" d="M73.01,56.45H82.99"/>
+        <path class="d" pathLength="1" d="M73.12,55.6H82.88"/>
+        <path class="d" pathLength="1" d="M73.22,53.2H82.78"/>
+        <path class="d" pathLength="1" d="M70.55,49.7C70.55,48.96 71.22,48.48 71.67,48.35C72.11,48.48 72.78,48.96 72.78,49.7"/>
+        <path class="d" pathLength="1" d="M73.08,49.7C73.08,48.96 73.75,48.48 74.2,48.35C74.65,48.48 75.32,48.96 75.32,49.7"/>
+        <path class="d" pathLength="1" d="M75.62,49.7C75.62,48.96 76.29,48.48 76.73,48.35C77.18,48.48 77.85,48.96 77.85,49.7"/>
+        <path class="d" pathLength="1" d="M78.15,49.7C78.15,48.96 78.82,48.48 79.27,48.35C79.71,48.48 80.38,48.96 80.38,49.7"/>
+        <path class="d" pathLength="1" d="M80.68,49.7C80.68,48.96 81.35,48.48 81.8,48.35C82.25,48.48 82.92,48.96 82.92,49.7"/>
+        <path class="d" pathLength="1" d="M83.22,49.7C83.22,48.96 83.89,48.48 84.33,48.35C84.78,48.48 85.45,48.96 85.45,49.7"/>
+        <path class="d" pathLength="1" d="M71.99,51.9C71.99,51.07 72.64,50.55 73.07,50.4C73.51,50.55 74.16,51.07 74.16,51.9"/>
+        <path class="d" pathLength="1" d="M74.46,51.9C74.46,51.07 75.1,50.55 75.54,50.4C75.97,50.55 76.62,51.07 76.62,51.9"/>
+        <path class="d" pathLength="1" d="M76.92,51.9C76.92,51.07 77.57,50.55 78,50.4C78.43,50.55 79.08,51.07 79.08,51.9"/>
+        <path class="d" pathLength="1" d="M79.38,51.9C79.38,51.07 80.03,50.55 80.46,50.4C80.9,50.55 81.54,51.07 81.54,51.9"/>
+        <path class="d" pathLength="1" d="M81.84,51.9C81.84,51.07 82.49,50.55 82.93,50.4C83.36,50.55 84.01,51.07 84.01,51.9"/>
+        <path class="d" pathLength="1" d="M71.8,46V42.4"/>
+        <path class="d" pathLength="1" d="M73.2,46V42.4"/>
+        <path class="d" pathLength="1" d="M74.6,46V42.4"/>
+        <path class="d" pathLength="1" d="M76,46V42.4"/>
+        <path class="d" pathLength="1" d="M77.4,46V42.4"/>
+        <path class="d" pathLength="1" d="M78.8,46V42.4"/>
+        <path class="d" pathLength="1" d="M80.2,46V42.4"/>
+        <path class="d" pathLength="1" d="M81.6,46V42.4"/>
+        <path class="d" pathLength="1" d="M83,46V42.4"/>
+        <path class="d" pathLength="1" d="M84.4,46V42.4"/>
+        <path class="d" pathLength="1" d="M78,42.5V35"/>
+      </g>
+    </g>
+    <g class="b b2" data-name="India Gate">
+      <g transform="translate(-86.87 66.08) scale(0.87)" style="--s: 0.87">
+        <path class="o" pathLength="1" d="M176,222H280V226H176Z"/>
+        <path class="o" pathLength="1" d="M181,218H275V222H181Z"/>
+        <path class="o" pathLength="1" d="M186,218V128"/>
+        <path class="o" pathLength="1" d="M270,218V128"/>
+        <path class="o" pathLength="1" d="M209,218V175.51A19,19 0 0 1 247,175.51V218"/>
+        <path class="o" pathLength="1" d="M206,175.51A22,22 0 0 1 250,175.51"/>
+        <path class="o" pathLength="1" d="M203.5,175.51A24.5,24.5 0 0 1 252.5,175.51"/>
+        <path class="o" pathLength="1" d="M186,177.01H203.5"/>
+        <path class="o" pathLength="1" d="M252.5,177.01H270"/>
+        <path class="o" pathLength="1" d="M186,141H270"/>
+        <path class="o" pathLength="1" d="M182.5,122H273.5V128H182.5Z"/>
+        <path class="o" pathLength="1" d="M190,108.5H266V122H190Z"/>
+        <path class="o" pathLength="1" d="M201,101.5H255V108.5H201Z"/>
+        <path class="o" pathLength="1" d="M209,96.5H247V101.5H209Z"/>
+        <path class="o" pathLength="1" d="M213,96.5C216,88 240,88 243,96.5"/>
+        <path class="d" pathLength="1" d="M186,211H209"/>
+        <path class="d" pathLength="1" d="M186,213H209"/>
+        <path class="d" pathLength="1" d="M247,211H270"/>
+        <path class="d" pathLength="1" d="M247,213H270"/>
+        <path class="d" pathLength="1" d="M226,156.51L225,150.61L231,150.61L230,156.51"/>
+        <path class="d" pathLength="1" d="M186,174.31H203.5"/>
+        <path class="d" pathLength="1" d="M203.5,177.01H209"/>
+        <path class="d" pathLength="1" d="M252.5,174.31H270"/>
+        <path class="d" pathLength="1" d="M247,177.01H252.5"/>
+        <path class="d" pathLength="1" d="M213,218V175.51A15,15 0 0 1 243,175.51V218"/>
+        <path class="d" pathLength="1" d="M240.99,168.01L244.45,166.01"/>
+        <path class="d" pathLength="1" d="M235.5,162.52L237.5,159.06"/>
+        <path class="d" pathLength="1" d="M228,160.51L228,156.51"/>
+        <path class="d" pathLength="1" d="M220.5,162.52L218.5,159.06"/>
+        <path class="d" pathLength="1" d="M215.01,168.01L211.55,166.01"/>
+        <path class="d" pathLength="1" d="M209,186.51H213"/>
+        <path class="d" pathLength="1" d="M243,186.51H247"/>
+        <path class="d" pathLength="1" d="M209,197.51H213"/>
+        <path class="d" pathLength="1" d="M243,197.51H247"/>
+        <path class="d" pathLength="1" d="M209,208.51H213"/>
+        <path class="d" pathLength="1" d="M243,208.51H247"/>
+        <path class="d" pathLength="1" d="M191,183.51H201V207H191Z"/>
+        <path class="d" pathLength="1" d="M192.5,185.51H199.5V205H192.5Z"/>
+        <path class="d" pathLength="1" d="M190.8,158.51C190.8,156.2 192.68,154.31 195,154.31C197.32,154.31 199.2,156.2 199.2,158.51C199.2,160.83 197.32,162.71 195,162.71C192.68,162.71 190.8,160.83 190.8,158.51Z"/>
+        <path class="d" pathLength="1" d="M192.7,158.51C192.7,157.24 193.73,156.21 195,156.21C196.27,156.21 197.3,157.24 197.3,158.51C197.3,159.78 196.27,160.81 195,160.81C193.73,160.81 192.7,159.78 192.7,158.51Z"/>
+        <path class="d" pathLength="1" d="M255,183.51H265V207H255Z"/>
+        <path class="d" pathLength="1" d="M256.5,185.51H263.5V205H256.5Z"/>
+        <path class="d" pathLength="1" d="M256.8,158.51C256.8,156.2 258.68,154.31 261,154.31C263.32,154.31 265.2,156.2 265.2,158.51C265.2,160.83 263.32,162.71 261,162.71C258.68,162.71 256.8,160.83 256.8,158.51Z"/>
+        <path class="d" pathLength="1" d="M258.7,158.51C258.7,157.24 259.73,156.21 261,156.21C262.27,156.21 263.3,157.24 263.3,158.51C263.3,159.78 262.27,160.81 261,160.81C259.73,160.81 258.7,159.78 258.7,158.51Z"/>
+        <path class="d" pathLength="1" d="M218.49,131.5V137.7"/>
+        <path class="d" pathLength="1" d="M220.15,137.7V131.5L224.28,137.7V131.5"/>
+        <path class="d" pathLength="1" d="M225.93,131.5V137.7H227.59C230.48,137.7,230.48,131.5,227.59,131.5Z"/>
+        <path class="d" pathLength="1" d="M231.72,131.5V137.7"/>
+        <path class="d" pathLength="1" d="M233.37,137.7L235.44,131.5L237.51,137.7"/>
+        <path class="d" pathLength="1" d="M234.1,135.63H236.78"/>
+        <path class="d" pathLength="1" d="M190.17,137V133L191.5,135.4L192.83,133V137"/>
+        <path class="d" pathLength="1" d="M196.57,133.6C195.97,132.8,193.9,132.73,193.9,135C193.9,137.27,195.97,137.2,196.57,136.4"/>
+        <path class="d" pathLength="1" d="M197.63,137V133L198.97,135.4L200.3,133V137"/>
+        <path class="d" pathLength="1" d="M201.37,133L204.03,137"/>
+        <path class="d" pathLength="1" d="M204.03,133L201.37,137"/>
+        <path class="d" pathLength="1" d="M205.1,133V137"/>
+        <path class="d" pathLength="1" d="M206.17,133L207.5,137L208.83,133"/>
+        <path class="d" pathLength="1" d="M247.17,137V133L248.5,135.4L249.83,133V137"/>
+        <path class="d" pathLength="1" d="M253.57,133.6C252.97,132.8,250.9,132.73,250.9,135C250.9,137.27,252.97,137.2,253.57,136.4"/>
+        <path class="d" pathLength="1" d="M254.63,137V133L255.97,135.4L257.3,133V137"/>
+        <path class="d" pathLength="1" d="M258.37,133L261.03,137"/>
+        <path class="d" pathLength="1" d="M261.03,133L258.37,137"/>
+        <path class="d" pathLength="1" d="M262.1,133V137"/>
+        <path class="d" pathLength="1" d="M263.17,133L265.83,137"/>
+        <path class="d" pathLength="1" d="M265.83,133L263.17,137"/>
+        <path class="d" pathLength="1" d="M182.5,124.5H273.5"/>
+        <path class="d" pathLength="1" d="M183.9,126V128"/>
+        <path class="d" pathLength="1" d="M186,126V128"/>
+        <path class="d" pathLength="1" d="M188.1,126V128"/>
+        <path class="d" pathLength="1" d="M190.2,126V128"/>
+        <path class="d" pathLength="1" d="M192.3,126V128"/>
+        <path class="d" pathLength="1" d="M194.4,126V128"/>
+        <path class="d" pathLength="1" d="M196.5,126V128"/>
+        <path class="d" pathLength="1" d="M198.6,126V128"/>
+        <path class="d" pathLength="1" d="M200.7,126V128"/>
+        <path class="d" pathLength="1" d="M202.8,126V128"/>
+        <path class="d" pathLength="1" d="M204.9,126V128"/>
+        <path class="d" pathLength="1" d="M207,126V128"/>
+        <path class="d" pathLength="1" d="M209.1,126V128"/>
+        <path class="d" pathLength="1" d="M211.2,126V128"/>
+        <path class="d" pathLength="1" d="M213.3,126V128"/>
+        <path class="d" pathLength="1" d="M215.4,126V128"/>
+        <path class="d" pathLength="1" d="M217.5,126V128"/>
+        <path class="d" pathLength="1" d="M219.6,126V128"/>
+        <path class="d" pathLength="1" d="M221.7,126V128"/>
+        <path class="d" pathLength="1" d="M223.8,126V128"/>
+        <path class="d" pathLength="1" d="M225.9,126V128"/>
+        <path class="d" pathLength="1" d="M228,126V128"/>
+        <path class="d" pathLength="1" d="M230.1,126V128"/>
+        <path class="d" pathLength="1" d="M232.2,126V128"/>
+        <path class="d" pathLength="1" d="M234.3,126V128"/>
+        <path class="d" pathLength="1" d="M236.4,126V128"/>
+        <path class="d" pathLength="1" d="M238.5,126V128"/>
+        <path class="d" pathLength="1" d="M240.6,126V128"/>
+        <path class="d" pathLength="1" d="M242.7,126V128"/>
+        <path class="d" pathLength="1" d="M244.8,126V128"/>
+        <path class="d" pathLength="1" d="M246.9,126V128"/>
+        <path class="d" pathLength="1" d="M249,126V128"/>
+        <path class="d" pathLength="1" d="M251.1,126V128"/>
+        <path class="d" pathLength="1" d="M253.2,126V128"/>
+        <path class="d" pathLength="1" d="M255.3,126V128"/>
+        <path class="d" pathLength="1" d="M257.4,126V128"/>
+        <path class="d" pathLength="1" d="M259.5,126V128"/>
+        <path class="d" pathLength="1" d="M261.6,126V128"/>
+        <path class="d" pathLength="1" d="M263.7,126V128"/>
+        <path class="d" pathLength="1" d="M265.8,126V128"/>
+        <path class="d" pathLength="1" d="M267.9,126V128"/>
+        <path class="d" pathLength="1" d="M270,126V128"/>
+        <path class="d" pathLength="1" d="M272.1,126V128"/>
+        <path class="d" pathLength="1" d="M190,110.5H266"/>
+        <path class="d" pathLength="1" d="M198,113.5Q198.75,113.1 199.5,113.5Q200.25,113.9 201,113.5Q201.75,113.1 202.5,113.5Q203.25,113.9 204,113.5Q204.75,113.1 205.5,113.5Q206.25,113.9 207,113.5Q207.75,113.1 208.5,113.5Q209.25,113.9 210,113.5Q210.75,113.1 211.5,113.5Q212.25,113.9 213,113.5Q213.75,113.1 214.5,113.5Q215.25,113.9 216,113.5Q216.75,113.1 217.5,113.5Q218.25,113.9 219,113.5Q219.75,113.1 220.5,113.5Q221.25,113.9 222,113.5Q222.75,113.1 223.5,113.5Q224.25,113.9 225,113.5Q225.75,113.1 226.5,113.5Q227.25,113.9 228,113.5Q228.75,113.1 229.5,113.5Q230.25,113.9 231,113.5Q231.75,113.1 232.5,113.5Q233.25,113.9 234,113.5Q234.75,113.1 235.5,113.5Q236.25,113.9 237,113.5Q237.75,113.1 238.5,113.5Q239.25,113.9 240,113.5Q240.75,113.1 241.5,113.5Q242.25,113.9 243,113.5Q243.75,113.1 244.5,113.5Q245.25,113.9 246,113.5Q246.75,113.1 247.5,113.5Q248.25,113.9 249,113.5Q249.75,113.1 250.5,113.5Q251.25,113.9 252,113.5Q252.75,113.1 253.5,113.5Q254.25,113.9 255,113.5Q255.75,113.1 256.5,113.5Q257.25,113.9 258,113.5"/>
+        <path class="d" pathLength="1" d="M198,116.3Q198.75,115.9 199.5,116.3Q200.25,116.7 201,116.3Q201.75,115.9 202.5,116.3Q203.25,116.7 204,116.3Q204.75,115.9 205.5,116.3Q206.25,116.7 207,116.3Q207.75,115.9 208.5,116.3Q209.25,116.7 210,116.3Q210.75,115.9 211.5,116.3Q212.25,116.7 213,116.3Q213.75,115.9 214.5,116.3Q215.25,116.7 216,116.3Q216.75,115.9 217.5,116.3Q218.25,116.7 219,116.3Q219.75,115.9 220.5,116.3Q221.25,116.7 222,116.3Q222.75,115.9 223.5,116.3Q224.25,116.7 225,116.3Q225.75,115.9 226.5,116.3Q227.25,116.7 228,116.3Q228.75,115.9 229.5,116.3Q230.25,116.7 231,116.3Q231.75,115.9 232.5,116.3Q233.25,116.7 234,116.3Q234.75,115.9 235.5,116.3Q236.25,116.7 237,116.3Q237.75,115.9 238.5,116.3Q239.25,116.7 240,116.3Q240.75,115.9 241.5,116.3Q242.25,116.7 243,116.3Q243.75,115.9 244.5,116.3Q245.25,116.7 246,116.3Q246.75,115.9 247.5,116.3Q248.25,116.7 249,116.3Q249.75,115.9 250.5,116.3Q251.25,116.7 252,116.3Q252.75,115.9 253.5,116.3Q254.25,116.7 255,116.3Q255.75,115.9 256.5,116.3Q257.25,116.7 258,116.3"/>
+        <path class="d" pathLength="1" d="M198,119.1Q198.75,118.7 199.5,119.1Q200.25,119.5 201,119.1Q201.75,118.7 202.5,119.1Q203.25,119.5 204,119.1Q204.75,118.7 205.5,119.1Q206.25,119.5 207,119.1Q207.75,118.7 208.5,119.1Q209.25,119.5 210,119.1Q210.75,118.7 211.5,119.1Q212.25,119.5 213,119.1Q213.75,118.7 214.5,119.1Q215.25,119.5 216,119.1Q216.75,118.7 217.5,119.1Q218.25,119.5 219,119.1Q219.75,118.7 220.5,119.1Q221.25,119.5 222,119.1Q222.75,118.7 223.5,119.1Q224.25,119.5 225,119.1Q225.75,118.7 226.5,119.1Q227.25,119.5 228,119.1Q228.75,118.7 229.5,119.1Q230.25,119.5 231,119.1Q231.75,118.7 232.5,119.1Q233.25,119.5 234,119.1Q234.75,118.7 235.5,119.1Q236.25,119.5 237,119.1Q237.75,118.7 238.5,119.1Q239.25,119.5 240,119.1Q240.75,118.7 241.5,119.1Q242.25,119.5 243,119.1Q243.75,118.7 244.5,119.1Q245.25,119.5 246,119.1Q246.75,118.7 247.5,119.1Q248.25,119.5 249,119.1Q249.75,118.7 250.5,119.1Q251.25,119.5 252,119.1Q252.75,118.7 253.5,119.1Q254.25,119.5 255,119.1Q255.75,118.7 256.5,119.1Q257.25,119.5 258,119.1"/>
+        <path class="d" pathLength="1" d="M211.5,96.5H244.5"/>
+      </g>
+    </g>
+    <g class="b b3" data-name="Red Fort">
+      <g transform="translate(91.33 48.79) scale(0.95)" style="--s: 0.95">
+        <path class="o" pathLength="1" d="M420.47,226L423.47,178"/>
+        <path class="o" pathLength="1" d="M423.47,178H425.07V175A2,2 0 0 1 429.07,175V178H430.67V175A2,2 0 0 1 434.67,175V178H440"/>
+        <path class="o" pathLength="1" d="M579.53,226L576.53,178"/>
+        <path class="o" pathLength="1" d="M560,178H561.6V175A2,2 0 0 1 565.6,175V178H567.2V175A2,2 0 0 1 571.2,175V178H576.53"/>
+        <path class="o" pathLength="1" d="M440,226V140"/>
+        <path class="o" pathLength="1" d="M466,226V140"/>
+        <path class="o" pathLength="1" d="M439,204H467"/>
+        <path class="o" pathLength="1" d="M439,180H467"/>
+        <path class="o" pathLength="1" d="M439,156H467"/>
+        <path class="o" pathLength="1" d="M439,140H467"/>
+        <path class="o" pathLength="1" d="M440,140H441.1V137.9A1.5,1.5 0 0 1 444.1,137.9V140H445.2V137.9A1.5,1.5 0 0 1 448.2,137.9V140H449.3V137.9A1.5,1.5 0 0 1 452.3,137.9V140H453.4V137.9A1.5,1.5 0 0 1 456.4,137.9V140H457.5V137.9A1.5,1.5 0 0 1 460.5,137.9V140H461.6V137.9A1.5,1.5 0 0 1 464.6,137.9V140H466"/>
+        <path class="o" pathLength="1" d="M443.2,136.4H462.8"/>
+        <path class="o" pathLength="1" d="M444.4,136.4V123.4"/>
+        <path class="o" pathLength="1" d="M450.13,136.4V123.4"/>
+        <path class="o" pathLength="1" d="M455.87,136.4V123.4"/>
+        <path class="o" pathLength="1" d="M461.6,136.4V123.4"/>
+        <path class="o" pathLength="1" d="M441.6,125.2L443.8,123.4L462.2,123.4L464.4,125.2"/>
+        <path class="o" pathLength="1" d="M445.95,123.4V122.2"/>
+        <path class="o" pathLength="1" d="M460.05,123.4V122.2"/>
+        <path class="o" pathLength="1" d="M445.95,122.2C444.4,116.35 449.12,111.54 453,109.2C456.88,111.54 461.6,116.35 460.05,122.2"/>
+        <path class="o" pathLength="1" d="M534,226V140"/>
+        <path class="o" pathLength="1" d="M560,226V140"/>
+        <path class="o" pathLength="1" d="M533,204H561"/>
+        <path class="o" pathLength="1" d="M533,180H561"/>
+        <path class="o" pathLength="1" d="M533,156H561"/>
+        <path class="o" pathLength="1" d="M533,140H561"/>
+        <path class="o" pathLength="1" d="M534,140H535.1V137.9A1.5,1.5 0 0 1 538.1,137.9V140H539.2V137.9A1.5,1.5 0 0 1 542.2,137.9V140H543.3V137.9A1.5,1.5 0 0 1 546.3,137.9V140H547.4V137.9A1.5,1.5 0 0 1 550.4,137.9V140H551.5V137.9A1.5,1.5 0 0 1 554.5,137.9V140H555.6V137.9A1.5,1.5 0 0 1 558.6,137.9V140H560"/>
+        <path class="o" pathLength="1" d="M537.2,136.4H556.8"/>
+        <path class="o" pathLength="1" d="M538.4,136.4V123.4"/>
+        <path class="o" pathLength="1" d="M544.13,136.4V123.4"/>
+        <path class="o" pathLength="1" d="M549.87,136.4V123.4"/>
+        <path class="o" pathLength="1" d="M555.6,136.4V123.4"/>
+        <path class="o" pathLength="1" d="M535.6,125.2L537.8,123.4L556.2,123.4L558.4,125.2"/>
+        <path class="o" pathLength="1" d="M539.95,123.4V122.2"/>
+        <path class="o" pathLength="1" d="M554.05,123.4V122.2"/>
+        <path class="o" pathLength="1" d="M539.95,122.2C538.4,116.35 543.12,111.54 547,109.2C550.88,111.54 555.6,116.35 554.05,122.2"/>
+        <path class="o" pathLength="1" d="M466,149V226"/>
+        <path class="o" pathLength="1" d="M534,149V226"/>
+        <path class="o" pathLength="1" d="M464,146H536V149H464Z"/>
+        <path class="o" pathLength="1" d="M466,162H534"/>
+        <path class="o" pathLength="1" d="M475,168H525V226H475Z"/>
+        <path class="o" pathLength="1" d="M480,226V196C480,182.25 492,173.5 500,171C508,173.5 520,182.25 520,196V226"/>
+        <path class="o" pathLength="1" d="M490,226V213C490,208.05 496,204.9 500,204C504,204.9 510,208.05 510,213V226"/>
+        <path class="o" pathLength="1" d="M464.7,146L464.7,131H467.3V146"/>
+        <path class="o" pathLength="1" d="M464.1,131C463.6,128 465.4,126.5 466,124.5C466.6,126.5 468.4,128 467.9,131"/>
+        <path class="o" pathLength="1" d="M532.7,146L532.7,131H535.3V146"/>
+        <path class="o" pathLength="1" d="M532.1,131C531.6,128 533.4,126.5 534,124.5C534.6,126.5 536.4,128 535.9,131"/>
+        <path class="o" pathLength="1" d="M469.9,146H478.1"/>
+        <path class="o" pathLength="1" d="M471.1,146V141.6"/>
+        <path class="o" pathLength="1" d="M473.03,146V141.6"/>
+        <path class="o" pathLength="1" d="M474.97,146V141.6"/>
+        <path class="o" pathLength="1" d="M476.9,146V141.6"/>
+        <path class="o" pathLength="1" d="M468.3,143.4L470.5,141.6L477.5,141.6L479.7,143.4"/>
+        <path class="o" pathLength="1" d="M471.62,141.6V140.4"/>
+        <path class="o" pathLength="1" d="M476.38,141.6V140.4"/>
+        <path class="o" pathLength="1" d="M471.62,140.4C471.1,138.15 472.69,136.3 474,135.4C475.31,136.3 476.9,138.15 476.38,140.4"/>
+        <path class="o" pathLength="1" d="M478.57,146H486.77"/>
+        <path class="o" pathLength="1" d="M479.77,146V141.6"/>
+        <path class="o" pathLength="1" d="M481.7,146V141.6"/>
+        <path class="o" pathLength="1" d="M483.63,146V141.6"/>
+        <path class="o" pathLength="1" d="M485.57,146V141.6"/>
+        <path class="o" pathLength="1" d="M476.97,143.4L479.17,141.6L486.17,141.6L488.37,143.4"/>
+        <path class="o" pathLength="1" d="M480.29,141.6V140.4"/>
+        <path class="o" pathLength="1" d="M485.04,141.6V140.4"/>
+        <path class="o" pathLength="1" d="M480.29,140.4C479.77,138.15 481.36,136.3 482.67,135.4C483.97,136.3 485.57,138.15 485.04,140.4"/>
+        <path class="o" pathLength="1" d="M487.23,146H495.43"/>
+        <path class="o" pathLength="1" d="M488.43,146V141.6"/>
+        <path class="o" pathLength="1" d="M490.37,146V141.6"/>
+        <path class="o" pathLength="1" d="M492.3,146V141.6"/>
+        <path class="o" pathLength="1" d="M494.23,146V141.6"/>
+        <path class="o" pathLength="1" d="M485.63,143.4L487.83,141.6L494.83,141.6L497.03,143.4"/>
+        <path class="o" pathLength="1" d="M488.96,141.6V140.4"/>
+        <path class="o" pathLength="1" d="M493.71,141.6V140.4"/>
+        <path class="o" pathLength="1" d="M488.96,140.4C488.43,138.15 490.03,136.3 491.33,135.4C492.64,136.3 494.23,138.15 493.71,140.4"/>
+        <path class="o" pathLength="1" d="M495.9,146H504.1"/>
+        <path class="o" pathLength="1" d="M497.1,146V141.6"/>
+        <path class="o" pathLength="1" d="M499.03,146V141.6"/>
+        <path class="o" pathLength="1" d="M500.97,146V141.6"/>
+        <path class="o" pathLength="1" d="M502.9,146V141.6"/>
+        <path class="o" pathLength="1" d="M494.3,143.4L496.5,141.6L503.5,141.6L505.7,143.4"/>
+        <path class="o" pathLength="1" d="M497.62,141.6V140.4"/>
+        <path class="o" pathLength="1" d="M502.38,141.6V140.4"/>
+        <path class="o" pathLength="1" d="M497.62,140.4C497.1,138.15 498.69,136.3 500,135.4C501.31,136.3 502.9,138.15 502.38,140.4"/>
+        <path class="o" pathLength="1" d="M504.57,146H512.77"/>
+        <path class="o" pathLength="1" d="M505.77,146V141.6"/>
+        <path class="o" pathLength="1" d="M507.7,146V141.6"/>
+        <path class="o" pathLength="1" d="M509.63,146V141.6"/>
+        <path class="o" pathLength="1" d="M511.57,146V141.6"/>
+        <path class="o" pathLength="1" d="M502.97,143.4L505.17,141.6L512.17,141.6L514.37,143.4"/>
+        <path class="o" pathLength="1" d="M506.29,141.6V140.4"/>
+        <path class="o" pathLength="1" d="M511.04,141.6V140.4"/>
+        <path class="o" pathLength="1" d="M506.29,140.4C505.77,138.15 507.36,136.3 508.67,135.4C509.97,136.3 511.57,138.15 511.04,140.4"/>
+        <path class="o" pathLength="1" d="M513.23,146H521.43"/>
+        <path class="o" pathLength="1" d="M514.43,146V141.6"/>
+        <path class="o" pathLength="1" d="M516.37,146V141.6"/>
+        <path class="o" pathLength="1" d="M518.3,146V141.6"/>
+        <path class="o" pathLength="1" d="M520.23,146V141.6"/>
+        <path class="o" pathLength="1" d="M511.63,143.4L513.83,141.6L520.83,141.6L523.03,143.4"/>
+        <path class="o" pathLength="1" d="M514.96,141.6V140.4"/>
+        <path class="o" pathLength="1" d="M519.71,141.6V140.4"/>
+        <path class="o" pathLength="1" d="M514.96,140.4C514.43,138.15 516.03,136.3 517.33,135.4C518.64,136.3 520.23,138.15 519.71,140.4"/>
+        <path class="o" pathLength="1" d="M521.9,146H530.1"/>
+        <path class="o" pathLength="1" d="M523.1,146V141.6"/>
+        <path class="o" pathLength="1" d="M525.03,146V141.6"/>
+        <path class="o" pathLength="1" d="M526.97,146V141.6"/>
+        <path class="o" pathLength="1" d="M528.9,146V141.6"/>
+        <path class="o" pathLength="1" d="M520.3,143.4L522.5,141.6L529.5,141.6L531.7,143.4"/>
+        <path class="o" pathLength="1" d="M523.62,141.6V140.4"/>
+        <path class="o" pathLength="1" d="M528.38,141.6V140.4"/>
+        <path class="o" pathLength="1" d="M523.62,140.4C523.1,138.15 524.69,136.3 526,135.4C527.31,136.3 528.9,138.15 528.38,140.4"/>
+        <path class="o" pathLength="1" d="M500,134.7V101.5"/>
+        <path class="o" pathLength="1" d="M500,102C505.1,100.4 510.2,103.6 517,102V112.5C510.2,114.1 505.1,110.9 500,112.5"/>
+        <path class="d" pathLength="1" d="M427.07,177.2V175.2"/>
+        <path class="d" pathLength="1" d="M432.67,177.2V175.2"/>
+        <path class="d" pathLength="1" d="M421.47,182.5H440"/>
+        <path class="d" pathLength="1" d="M422.47,211H440"/>
+        <path class="d" pathLength="1" d="M422.87,213H440"/>
+        <path class="d" pathLength="1" d="M563.6,177.2V175.2"/>
+        <path class="d" pathLength="1" d="M569.2,177.2V175.2"/>
+        <path class="d" pathLength="1" d="M560,182.5H578.53"/>
+        <path class="d" pathLength="1" d="M560,211H577.53"/>
+        <path class="d" pathLength="1" d="M560,213H577.13"/>
+        <path class="d" pathLength="1" d="M446,226V140"/>
+        <path class="d" pathLength="1" d="M460,226V140"/>
+        <path class="d" pathLength="1" d="M439.5,206.2H466.5"/>
+        <path class="d" pathLength="1" d="M439.5,182.2H466.5"/>
+        <path class="d" pathLength="1" d="M439.5,158.2H466.5"/>
+        <path class="d" pathLength="1" d="M448,208H458V223H448Z"/>
+        <path class="d" pathLength="1" d="M449.6,223V215.25C449.6,212.2 451.64,210.25 453,209.7C454.36,210.25 456.4,212.2 456.4,215.25V223"/>
+        <path class="d" pathLength="1" d="M441.5,223V215.25C441.5,212.36 442.4,210.53 443,210C443.6,210.53 444.5,212.36 444.5,215.25V223"/>
+        <path class="d" pathLength="1" d="M461.5,223V215.25C461.5,212.36 462.4,210.53 463,210C463.6,210.53 464.5,212.36 464.5,215.25V223"/>
+        <path class="d" pathLength="1" d="M448,184H458V201H448Z"/>
+        <path class="d" pathLength="1" d="M449.6,201V192.25C449.6,188.65 451.64,186.35 453,185.7C454.36,186.35 456.4,188.65 456.4,192.25V201"/>
+        <path class="d" pathLength="1" d="M441.5,201V192.25C441.5,188.81 442.4,186.62 443,186C443.6,186.62 444.5,188.81 444.5,192.25V201"/>
+        <path class="d" pathLength="1" d="M461.5,201V192.25C461.5,188.81 462.4,186.62 463,186C463.6,186.62 464.5,188.81 464.5,192.25V201"/>
+        <path class="d" pathLength="1" d="M448,160H458V177H448Z"/>
+        <path class="d" pathLength="1" d="M449.6,177V168.25C449.6,164.65 451.64,162.35 453,161.7C454.36,162.35 456.4,164.65 456.4,168.25V177"/>
+        <path class="d" pathLength="1" d="M441.5,177V168.25C441.5,164.81 442.4,162.62 443,162C443.6,162.62 444.5,164.81 444.5,168.25V177"/>
+        <path class="d" pathLength="1" d="M461.5,177V168.25C461.5,164.81 462.4,162.62 463,162C463.6,162.62 464.5,164.81 464.5,168.25V177"/>
+        <path class="d" pathLength="1" d="M448,142.5H458V153H448Z"/>
+        <path class="d" pathLength="1" d="M449.6,153V147.5C449.6,145.69 451.64,144.53 453,144.2C454.36,144.53 456.4,145.69 456.4,147.5V153"/>
+        <path class="d" pathLength="1" d="M441.5,153V147.5C441.5,145.85 442.4,144.8 443,144.5C443.6,144.8 444.5,145.85 444.5,147.5V153"/>
+        <path class="d" pathLength="1" d="M461.5,153V147.5C461.5,145.85 462.4,144.8 463,144.5C463.6,144.8 464.5,145.85 464.5,147.5V153"/>
+        <path class="d" pathLength="1" d="M444.4,128.86C444.4,126.72 446.12,125.35 447.27,124.96C448.41,125.35 450.13,126.72 450.13,128.86"/>
+        <path class="d" pathLength="1" d="M450.13,128.86C450.13,126.72 451.85,125.35 453,124.96C454.15,125.35 455.87,126.72 455.87,128.86"/>
+        <path class="d" pathLength="1" d="M455.87,128.86C455.87,126.72 457.59,125.35 458.73,124.96C459.88,125.35 461.6,126.72 461.6,128.86"/>
+        <path class="d" pathLength="1" d="M445.95,122.2H460.05"/>
+        <path class="d" pathLength="1" d="M453,109.2V107.1"/>
+        <path class="d" pathLength="1" d="M451.8,105.9C451.8,105.23 452.34,104.69 453,104.69C453.66,104.69 454.2,105.23 454.2,105.9C454.2,106.56 453.66,107.1 453,107.1C452.34,107.1 451.8,106.56 451.8,105.9Z"/>
+        <path class="d" pathLength="1" d="M453,104.69V103.2"/>
+        <path class="d" pathLength="1" d="M540,226V140"/>
+        <path class="d" pathLength="1" d="M554,226V140"/>
+        <path class="d" pathLength="1" d="M533.5,206.2H560.5"/>
+        <path class="d" pathLength="1" d="M533.5,182.2H560.5"/>
+        <path class="d" pathLength="1" d="M533.5,158.2H560.5"/>
+        <path class="d" pathLength="1" d="M542,208H552V223H542Z"/>
+        <path class="d" pathLength="1" d="M543.6,223V215.25C543.6,212.2 545.64,210.25 547,209.7C548.36,210.25 550.4,212.2 550.4,215.25V223"/>
+        <path class="d" pathLength="1" d="M535.5,223V215.25C535.5,212.36 536.4,210.53 537,210C537.6,210.53 538.5,212.36 538.5,215.25V223"/>
+        <path class="d" pathLength="1" d="M555.5,223V215.25C555.5,212.36 556.4,210.53 557,210C557.6,210.53 558.5,212.36 558.5,215.25V223"/>
+        <path class="d" pathLength="1" d="M542,184H552V201H542Z"/>
+        <path class="d" pathLength="1" d="M543.6,201V192.25C543.6,188.65 545.64,186.35 547,185.7C548.36,186.35 550.4,188.65 550.4,192.25V201"/>
+        <path class="d" pathLength="1" d="M535.5,201V192.25C535.5,188.81 536.4,186.62 537,186C537.6,186.62 538.5,188.81 538.5,192.25V201"/>
+        <path class="d" pathLength="1" d="M555.5,201V192.25C555.5,188.81 556.4,186.62 557,186C557.6,186.62 558.5,188.81 558.5,192.25V201"/>
+        <path class="d" pathLength="1" d="M542,160H552V177H542Z"/>
+        <path class="d" pathLength="1" d="M543.6,177V168.25C543.6,164.65 545.64,162.35 547,161.7C548.36,162.35 550.4,164.65 550.4,168.25V177"/>
+        <path class="d" pathLength="1" d="M535.5,177V168.25C535.5,164.81 536.4,162.62 537,162C537.6,162.62 538.5,164.81 538.5,168.25V177"/>
+        <path class="d" pathLength="1" d="M555.5,177V168.25C555.5,164.81 556.4,162.62 557,162C557.6,162.62 558.5,164.81 558.5,168.25V177"/>
+        <path class="d" pathLength="1" d="M542,142.5H552V153H542Z"/>
+        <path class="d" pathLength="1" d="M543.6,153V147.5C543.6,145.69 545.64,144.53 547,144.2C548.36,144.53 550.4,145.69 550.4,147.5V153"/>
+        <path class="d" pathLength="1" d="M535.5,153V147.5C535.5,145.85 536.4,144.8 537,144.5C537.6,144.8 538.5,145.85 538.5,147.5V153"/>
+        <path class="d" pathLength="1" d="M555.5,153V147.5C555.5,145.85 556.4,144.8 557,144.5C557.6,144.8 558.5,145.85 558.5,147.5V153"/>
+        <path class="d" pathLength="1" d="M538.4,128.86C538.4,126.72 540.12,125.35 541.27,124.96C542.41,125.35 544.13,126.72 544.13,128.86"/>
+        <path class="d" pathLength="1" d="M544.13,128.86C544.13,126.72 545.85,125.35 547,124.96C548.15,125.35 549.87,126.72 549.87,128.86"/>
+        <path class="d" pathLength="1" d="M549.87,128.86C549.87,126.72 551.59,125.35 552.73,124.96C553.88,125.35 555.6,126.72 555.6,128.86"/>
+        <path class="d" pathLength="1" d="M539.95,122.2H554.05"/>
+        <path class="d" pathLength="1" d="M547,109.2V107.1"/>
+        <path class="d" pathLength="1" d="M545.8,105.9C545.8,105.23 546.34,104.69 547,104.69C547.66,104.69 548.2,105.23 548.2,105.9C548.2,106.56 547.66,107.1 547,107.1C546.34,107.1 545.8,106.56 545.8,105.9Z"/>
+        <path class="d" pathLength="1" d="M547,104.69V103.2"/>
+        <path class="d" pathLength="1" d="M466,164.5H534"/>
+        <path class="d" pathLength="1" d="M469.4,161V154C469.4,152.35 470.96,151.3 472,151C473.04,151.3 474.6,152.35 474.6,154V161"/>
+        <path class="d" pathLength="1" d="M476.4,161V154C476.4,152.35 477.96,151.3 479,151C480.04,151.3 481.6,152.35 481.6,154V161"/>
+        <path class="d" pathLength="1" d="M483.4,161V154C483.4,152.35 484.96,151.3 486,151C487.04,151.3 488.6,152.35 488.6,154V161"/>
+        <path class="d" pathLength="1" d="M490.4,161V154C490.4,152.35 491.96,151.3 493,151C494.04,151.3 495.6,152.35 495.6,154V161"/>
+        <path class="d" pathLength="1" d="M497.4,161V154C497.4,152.35 498.96,151.3 500,151C501.04,151.3 502.6,152.35 502.6,154V161"/>
+        <path class="d" pathLength="1" d="M504.4,161V154C504.4,152.35 505.96,151.3 507,151C508.04,151.3 509.6,152.35 509.6,154V161"/>
+        <path class="d" pathLength="1" d="M511.4,161V154C511.4,152.35 512.96,151.3 514,151C515.04,151.3 516.6,152.35 516.6,154V161"/>
+        <path class="d" pathLength="1" d="M518.4,161V154C518.4,152.35 519.96,151.3 521,151C522.04,151.3 523.6,152.35 523.6,154V161"/>
+        <path class="d" pathLength="1" d="M525.4,161V154C525.4,152.35 526.96,151.3 528,151C529.04,151.3 530.6,152.35 530.6,154V161"/>
+        <path class="d" pathLength="1" d="M483.5,226V197C483.5,185.45 493.4,178.1 500,176C506.6,178.1 516.5,185.45 516.5,197V226"/>
+        <path class="d" pathLength="1" d="M500,207V226"/>
+        <path class="d" pathLength="1" d="M490.6,213H509.4"/>
+        <path class="d" pathLength="1" d="M490.6,217H509.4"/>
+        <path class="d" pathLength="1" d="M490.6,221H509.4"/>
+        <path class="d" pathLength="1" d="M478.1,174.5C478.1,173.17 479.17,172.1 480.5,172.1C481.83,172.1 482.9,173.17 482.9,174.5C482.9,175.83 481.83,176.9 480.5,176.9C479.17,176.9 478.1,175.83 478.1,174.5Z"/>
+        <path class="d" pathLength="1" d="M517.1,174.5C517.1,173.17 518.17,172.1 519.5,172.1C520.83,172.1 521.9,173.17 521.9,174.5C521.9,175.83 520.83,176.9 519.5,176.9C518.17,176.9 517.1,175.83 517.1,174.5Z"/>
+        <path class="d" pathLength="1" d="M467.5,223V210C467.5,206.7 469,204.6 470,204C471,204.6 472.5,206.7 472.5,210V223"/>
+        <path class="d" pathLength="1" d="M467.5,196V182C467.5,178.7 469,176.6 470,176C471,176.6 472.5,178.7 472.5,182V196"/>
+        <path class="d" pathLength="1" d="M527.5,223V210C527.5,206.7 529,204.6 530,204C531,204.6 532.5,206.7 532.5,210V223"/>
+        <path class="d" pathLength="1" d="M527.5,196V182C527.5,178.7 529,176.6 530,176C531,176.6 532.5,178.7 532.5,182V196"/>
+        <path class="d" pathLength="1" d="M466,124.5V121.5"/>
+        <path class="d" pathLength="1" d="M464.7,138.5H467.3"/>
+        <path class="d" pathLength="1" d="M534,124.5V121.5"/>
+        <path class="d" pathLength="1" d="M532.7,138.5H535.3"/>
+        <path class="d" pathLength="1" d="M471.62,140.4H476.38"/>
+        <path class="d" pathLength="1" d="M474,135.4V134.49"/>
+        <path class="d" pathLength="1" d="M473.45,133.94C473.45,133.64 473.7,133.39 474,133.39C474.3,133.39 474.55,133.64 474.55,133.94C474.55,134.24 474.3,134.49 474,134.49C473.7,134.49 473.45,134.24 473.45,133.94Z"/>
+        <path class="d" pathLength="1" d="M474,133.39V132.8"/>
+        <path class="d" pathLength="1" d="M480.29,140.4H485.04"/>
+        <path class="d" pathLength="1" d="M482.67,135.4V134.49"/>
+        <path class="d" pathLength="1" d="M482.12,133.94C482.12,133.64 482.36,133.39 482.67,133.39C482.97,133.39 483.22,133.64 483.22,133.94C483.22,134.24 482.97,134.49 482.67,134.49C482.36,134.49 482.12,134.24 482.12,133.94Z"/>
+        <path class="d" pathLength="1" d="M482.67,133.39V132.8"/>
+        <path class="d" pathLength="1" d="M488.96,140.4H493.71"/>
+        <path class="d" pathLength="1" d="M491.33,135.4V134.49"/>
+        <path class="d" pathLength="1" d="M490.78,133.94C490.78,133.64 491.03,133.39 491.33,133.39C491.64,133.39 491.88,133.64 491.88,133.94C491.88,134.24 491.64,134.49 491.33,134.49C491.03,134.49 490.78,134.24 490.78,133.94Z"/>
+        <path class="d" pathLength="1" d="M491.33,133.39V132.8"/>
+        <path class="d" pathLength="1" d="M497.62,140.4H502.38"/>
+        <path class="d" pathLength="1" d="M500,135.4V134.49"/>
+        <path class="d" pathLength="1" d="M499.45,133.94C499.45,133.64 499.7,133.39 500,133.39C500.3,133.39 500.55,133.64 500.55,133.94C500.55,134.24 500.3,134.49 500,134.49C499.7,134.49 499.45,134.24 499.45,133.94Z"/>
+        <path class="d" pathLength="1" d="M500,133.39V132.8"/>
+        <path class="d" pathLength="1" d="M506.29,140.4H511.04"/>
+        <path class="d" pathLength="1" d="M508.67,135.4V134.49"/>
+        <path class="d" pathLength="1" d="M508.12,133.94C508.12,133.64 508.36,133.39 508.67,133.39C508.97,133.39 509.22,133.64 509.22,133.94C509.22,134.24 508.97,134.49 508.67,134.49C508.36,134.49 508.12,134.24 508.12,133.94Z"/>
+        <path class="d" pathLength="1" d="M508.67,133.39V132.8"/>
+        <path class="d" pathLength="1" d="M514.96,140.4H519.71"/>
+        <path class="d" pathLength="1" d="M517.33,135.4V134.49"/>
+        <path class="d" pathLength="1" d="M516.78,133.94C516.78,133.64 517.03,133.39 517.33,133.39C517.64,133.39 517.88,133.64 517.88,133.94C517.88,134.24 517.64,134.49 517.33,134.49C517.03,134.49 516.78,134.24 516.78,133.94Z"/>
+        <path class="d" pathLength="1" d="M517.33,133.39V132.8"/>
+        <path class="d" pathLength="1" d="M523.62,140.4H528.38"/>
+        <path class="d" pathLength="1" d="M526,135.4V134.49"/>
+        <path class="d" pathLength="1" d="M525.45,133.94C525.45,133.64 525.7,133.39 526,133.39C526.3,133.39 526.55,133.64 526.55,133.94C526.55,134.24 526.3,134.49 526,134.49C525.7,134.49 525.45,134.24 525.45,133.94Z"/>
+        <path class="d" pathLength="1" d="M526,133.39V132.8"/>
+        <path class="d" pathLength="1" d="M500,105.5C505.1,103.9 510.2,107.1 517,105.5"/>
+        <path class="d" pathLength="1" d="M500,109C505.1,107.4 510.2,110.6 517,109"/>
+        <path class="d" pathLength="1" d="M507.13,107.25C507.13,106.5 507.75,105.89 508.5,105.89C509.25,105.89 509.87,106.5 509.87,107.25C509.87,108 509.25,108.61 508.5,108.61C507.75,108.61 507.13,108 507.13,107.25Z"/>
+      </g>
+    </g>
+    <g class="b b4" data-name="Raisina Hill">
+      <g transform="translate(-415.04 80.2) scale(0.86)" style="--s: 0.86">
+        <path class="o" pathLength="1" d="M686,207H752V212H686Z"/>
+        <path class="o" pathLength="1" d="M688,207V172"/>
+        <path class="o" pathLength="1" d="M750,207V172"/>
+        <path class="o" pathLength="1" d="M688,189.5H709"/>
+        <path class="o" pathLength="1" d="M729,189.5H750"/>
+        <path class="o" pathLength="1" d="M709,207V172"/>
+        <path class="o" pathLength="1" d="M729,207V172"/>
+        <path class="o" pathLength="1" d="M683.5,174.2L686,172L752,172L754.5,174.2"/>
+        <path class="o" pathLength="1" d="M688,167H750V172H688Z"/>
+        <path class="o" pathLength="1" d="M688.2,167H697.8"/>
+        <path class="o" pathLength="1" d="M689.4,167V160.5"/>
+        <path class="o" pathLength="1" d="M691.8,167V160.5"/>
+        <path class="o" pathLength="1" d="M694.2,167V160.5"/>
+        <path class="o" pathLength="1" d="M696.6,167V160.5"/>
+        <path class="o" pathLength="1" d="M686.6,162.3L688.8,160.5L697.2,160.5L699.4,162.3"/>
+        <path class="o" pathLength="1" d="M690.05,160.5V159.3"/>
+        <path class="o" pathLength="1" d="M695.95,160.5V159.3"/>
+        <path class="o" pathLength="1" d="M690.05,159.3C689.4,156.6 691.38,154.38 693,153.3C694.62,154.38 696.6,156.6 695.95,159.3"/>
+        <path class="o" pathLength="1" d="M740.2,167H749.8"/>
+        <path class="o" pathLength="1" d="M741.4,167V160.5"/>
+        <path class="o" pathLength="1" d="M743.8,167V160.5"/>
+        <path class="o" pathLength="1" d="M746.2,167V160.5"/>
+        <path class="o" pathLength="1" d="M748.6,167V160.5"/>
+        <path class="o" pathLength="1" d="M738.6,162.3L740.8,160.5L749.2,160.5L751.4,162.3"/>
+        <path class="o" pathLength="1" d="M742.05,160.5V159.3"/>
+        <path class="o" pathLength="1" d="M747.95,160.5V159.3"/>
+        <path class="o" pathLength="1" d="M742.05,159.3C741.4,156.6 743.38,154.38 745,153.3C746.62,154.38 748.6,156.6 747.95,159.3"/>
+        <path class="o" pathLength="1" d="M709,167V143"/>
+        <path class="o" pathLength="1" d="M729,167V143"/>
+        <path class="o" pathLength="1" d="M706,145.3L708.4,143L729.6,143L732,145.3"/>
+        <path class="o" pathLength="1" d="M709.5,141H728.5"/>
+        <path class="o" pathLength="1" d="M709.5,130.5H728.5"/>
+        <path class="o" pathLength="1" d="M709.5,143V130.5"/>
+        <path class="o" pathLength="1" d="M728.5,143V130.5"/>
+        <path class="o" pathLength="1" d="M708.2,131.6L709,129.8L729,129.8L729.8,131.6"/>
+        <path class="o" pathLength="1" d="M710,129.8A9,9 0 0 1 728,129.8"/>
+        <path class="o" pathLength="1" d="M715.8,120.8H722.2"/>
+        <path class="o" pathLength="1" d="M717,120.8V116.8"/>
+        <path class="o" pathLength="1" d="M718.33,120.8V116.8"/>
+        <path class="o" pathLength="1" d="M719.67,120.8V116.8"/>
+        <path class="o" pathLength="1" d="M721,120.8V116.8"/>
+        <path class="o" pathLength="1" d="M714.2,118.6L716.4,116.8L721.6,116.8L723.8,118.6"/>
+        <path class="o" pathLength="1" d="M717.36,116.8V115.6"/>
+        <path class="o" pathLength="1" d="M720.64,116.8V115.6"/>
+        <path class="o" pathLength="1" d="M717.36,115.6C717,114.07 718.1,112.81 719,112.2C719.9,112.81 721,114.07 720.64,115.6"/>
+        <path class="d" pathLength="1" d="M688,204H750"/>
+        <path class="d" pathLength="1" d="M688,191.3H709"/>
+        <path class="d" pathLength="1" d="M729,191.3H750"/>
+        <path class="d" pathLength="1" d="M704.3,203V197.5C704.3,195.69 705.2,194.53 705.8,194.2C706.4,194.53 707.3,195.69 707.3,197.5V203"/>
+        <path class="d" pathLength="1" d="M704.3,177.5H707.3V186.5H704.3Z"/>
+        <path class="d" pathLength="1" d="M699.4,203V197.5C699.4,195.69 700.3,194.53 700.9,194.2C701.5,194.53 702.4,195.69 702.4,197.5V203"/>
+        <path class="d" pathLength="1" d="M699.4,177.5H702.4V186.5H699.4Z"/>
+        <path class="d" pathLength="1" d="M694.5,203V197.5C694.5,195.69 695.4,194.53 696,194.2C696.6,194.53 697.5,195.69 697.5,197.5V203"/>
+        <path class="d" pathLength="1" d="M694.5,177.5H697.5V186.5H694.5Z"/>
+        <path class="d" pathLength="1" d="M689.6,203V197.5C689.6,195.69 690.5,194.53 691.1,194.2C691.7,194.53 692.6,195.69 692.6,197.5V203"/>
+        <path class="d" pathLength="1" d="M689.6,177.5H692.6V186.5H689.6Z"/>
+        <path class="d" pathLength="1" d="M730.7,203V197.5C730.7,195.69 731.6,194.53 732.2,194.2C732.8,194.53 733.7,195.69 733.7,197.5V203"/>
+        <path class="d" pathLength="1" d="M730.7,177.5H733.7V186.5H730.7Z"/>
+        <path class="d" pathLength="1" d="M735.6,203V197.5C735.6,195.69 736.5,194.53 737.1,194.2C737.7,194.53 738.6,195.69 738.6,197.5V203"/>
+        <path class="d" pathLength="1" d="M735.6,177.5H738.6V186.5H735.6Z"/>
+        <path class="d" pathLength="1" d="M740.5,203V197.5C740.5,195.69 741.4,194.53 742,194.2C742.6,194.53 743.5,195.69 743.5,197.5V203"/>
+        <path class="d" pathLength="1" d="M740.5,177.5H743.5V186.5H740.5Z"/>
+        <path class="d" pathLength="1" d="M745.4,203V197.5C745.4,195.69 746.3,194.53 746.9,194.2C747.5,194.53 748.4,195.69 748.4,197.5V203"/>
+        <path class="d" pathLength="1" d="M745.4,177.5H748.4V186.5H745.4Z"/>
+        <path class="d" pathLength="1" d="M711.4,206V178.5"/>
+        <path class="d" pathLength="1" d="M712.8,206V178.5"/>
+        <path class="d" pathLength="1" d="M711.4,178.5Q711.4,177.2 710.5,176.7H713.7Q712.8,177.2 712.8,178.5"/>
+        <path class="d" pathLength="1" d="M716,206V178.5"/>
+        <path class="d" pathLength="1" d="M717.4,206V178.5"/>
+        <path class="d" pathLength="1" d="M716,178.5Q716,177.2 715.1,176.7H718.3Q717.4,177.2 717.4,178.5"/>
+        <path class="d" pathLength="1" d="M720.6,206V178.5"/>
+        <path class="d" pathLength="1" d="M722,206V178.5"/>
+        <path class="d" pathLength="1" d="M720.6,178.5Q720.6,177.2 719.7,176.7H722.9Q722,177.2 722,178.5"/>
+        <path class="d" pathLength="1" d="M725.2,206V178.5"/>
+        <path class="d" pathLength="1" d="M726.6,206V178.5"/>
+        <path class="d" pathLength="1" d="M725.2,178.5Q725.2,177.2 724.3,176.7H727.5Q726.6,177.2 726.6,178.5"/>
+        <path class="d" pathLength="1" d="M709,176.7H729"/>
+        <path class="d" pathLength="1" d="M689.6,167.8V171.2"/>
+        <path class="d" pathLength="1" d="M691.5,167.8V171.2"/>
+        <path class="d" pathLength="1" d="M693.4,167.8V171.2"/>
+        <path class="d" pathLength="1" d="M695.3,167.8V171.2"/>
+        <path class="d" pathLength="1" d="M697.2,167.8V171.2"/>
+        <path class="d" pathLength="1" d="M699.1,167.8V171.2"/>
+        <path class="d" pathLength="1" d="M701,167.8V171.2"/>
+        <path class="d" pathLength="1" d="M702.9,167.8V171.2"/>
+        <path class="d" pathLength="1" d="M704.8,167.8V171.2"/>
+        <path class="d" pathLength="1" d="M706.7,167.8V171.2"/>
+        <path class="d" pathLength="1" d="M708.6,167.8V171.2"/>
+        <path class="d" pathLength="1" d="M710.5,167.8V171.2"/>
+        <path class="d" pathLength="1" d="M712.4,167.8V171.2"/>
+        <path class="d" pathLength="1" d="M714.3,167.8V171.2"/>
+        <path class="d" pathLength="1" d="M716.2,167.8V171.2"/>
+        <path class="d" pathLength="1" d="M718.1,167.8V171.2"/>
+        <path class="d" pathLength="1" d="M720,167.8V171.2"/>
+        <path class="d" pathLength="1" d="M721.9,167.8V171.2"/>
+        <path class="d" pathLength="1" d="M723.8,167.8V171.2"/>
+        <path class="d" pathLength="1" d="M725.7,167.8V171.2"/>
+        <path class="d" pathLength="1" d="M727.6,167.8V171.2"/>
+        <path class="d" pathLength="1" d="M729.5,167.8V171.2"/>
+        <path class="d" pathLength="1" d="M731.4,167.8V171.2"/>
+        <path class="d" pathLength="1" d="M733.3,167.8V171.2"/>
+        <path class="d" pathLength="1" d="M735.2,167.8V171.2"/>
+        <path class="d" pathLength="1" d="M737.1,167.8V171.2"/>
+        <path class="d" pathLength="1" d="M739,167.8V171.2"/>
+        <path class="d" pathLength="1" d="M740.9,167.8V171.2"/>
+        <path class="d" pathLength="1" d="M742.8,167.8V171.2"/>
+        <path class="d" pathLength="1" d="M744.7,167.8V171.2"/>
+        <path class="d" pathLength="1" d="M746.6,167.8V171.2"/>
+        <path class="d" pathLength="1" d="M748.5,167.8V171.2"/>
+        <path class="d" pathLength="1" d="M689.4,163.23C689.4,162.16 690.12,161.47 690.6,161.28C691.08,161.47 691.8,162.16 691.8,163.23"/>
+        <path class="d" pathLength="1" d="M691.8,163.23C691.8,162.16 692.52,161.47 693,161.28C693.48,161.47 694.2,162.16 694.2,163.23"/>
+        <path class="d" pathLength="1" d="M694.2,163.23C694.2,162.16 694.92,161.47 695.4,161.28C695.88,161.47 696.6,162.16 696.6,163.23"/>
+        <path class="d" pathLength="1" d="M690.05,159.3H695.95"/>
+        <path class="d" pathLength="1" d="M693,153.3V152.25"/>
+        <path class="d" pathLength="1" d="M692.45,151.7C692.45,151.4 692.7,151.15 693,151.15C693.3,151.15 693.55,151.4 693.55,151.7C693.55,152 693.3,152.25 693,152.25C692.7,152.25 692.45,152 692.45,151.7Z"/>
+        <path class="d" pathLength="1" d="M693,151.15V150.3"/>
+        <path class="d" pathLength="1" d="M741.4,163.23C741.4,162.16 742.12,161.47 742.6,161.28C743.08,161.47 743.8,162.16 743.8,163.23"/>
+        <path class="d" pathLength="1" d="M743.8,163.23C743.8,162.16 744.52,161.47 745,161.28C745.48,161.47 746.2,162.16 746.2,163.23"/>
+        <path class="d" pathLength="1" d="M746.2,163.23C746.2,162.16 746.92,161.47 747.4,161.28C747.88,161.47 748.6,162.16 748.6,163.23"/>
+        <path class="d" pathLength="1" d="M742.05,159.3H747.95"/>
+        <path class="d" pathLength="1" d="M745,153.3V152.25"/>
+        <path class="d" pathLength="1" d="M744.45,151.7C744.45,151.4 744.7,151.15 745,151.15C745.3,151.15 745.55,151.4 745.55,151.7C745.55,152 745.3,152.25 745,152.25C744.7,152.25 744.45,152 744.45,151.7Z"/>
+        <path class="d" pathLength="1" d="M745,151.15V150.3"/>
+        <path class="d" pathLength="1" d="M712,165.5V155C712,152.25 713.8,150.5 715,150C716.2,150.5 718,152.25 718,155V165.5"/>
+        <path class="d" pathLength="1" d="M720,165.5V155C720,152.25 721.8,150.5 723,150C724.2,150.5 726,152.25 726,155V165.5"/>
+        <path class="d" pathLength="1" d="M709,146.5H729"/>
+        <path class="d" pathLength="1" d="M710.55,140.5V132"/>
+        <path class="d" pathLength="1" d="M711.45,140.5V132"/>
+        <path class="d" pathLength="1" d="M713.75,140.5V132"/>
+        <path class="d" pathLength="1" d="M714.65,140.5V132"/>
+        <path class="d" pathLength="1" d="M716.95,140.5V132"/>
+        <path class="d" pathLength="1" d="M717.85,140.5V132"/>
+        <path class="d" pathLength="1" d="M720.15,140.5V132"/>
+        <path class="d" pathLength="1" d="M721.05,140.5V132"/>
+        <path class="d" pathLength="1" d="M723.35,140.5V132"/>
+        <path class="d" pathLength="1" d="M724.25,140.5V132"/>
+        <path class="d" pathLength="1" d="M726.55,140.5V132"/>
+        <path class="d" pathLength="1" d="M727.45,140.5V132"/>
+        <path class="d" pathLength="1" d="M717.36,115.6H720.64"/>
+        <path class="d" pathLength="1" d="M719,112.2V111.29"/>
+        <path class="d" pathLength="1" d="M718.45,110.74C718.45,110.44 718.7,110.19 719,110.19C719.3,110.19 719.55,110.44 719.55,110.74C719.55,111.04 719.3,111.29 719,111.29C718.7,111.29 718.45,111.04 718.45,110.74Z"/>
+        <path class="d" pathLength="1" d="M719,110.19V109.6"/>
+      </g>
+      <g transform="translate(-383.66 80.2) scale(0.86)" style="--s: 0.86">
+        <path class="o" pathLength="1" d="M928,207H994V212H928Z"/>
+        <path class="o" pathLength="1" d="M930,207V172"/>
+        <path class="o" pathLength="1" d="M992,207V172"/>
+        <path class="o" pathLength="1" d="M930,189.5H951"/>
+        <path class="o" pathLength="1" d="M971,189.5H992"/>
+        <path class="o" pathLength="1" d="M951,207V172"/>
+        <path class="o" pathLength="1" d="M971,207V172"/>
+        <path class="o" pathLength="1" d="M925.5,174.2L928,172L994,172L996.5,174.2"/>
+        <path class="o" pathLength="1" d="M930,167H992V172H930Z"/>
+        <path class="o" pathLength="1" d="M930.2,167H939.8"/>
+        <path class="o" pathLength="1" d="M931.4,167V160.5"/>
+        <path class="o" pathLength="1" d="M933.8,167V160.5"/>
+        <path class="o" pathLength="1" d="M936.2,167V160.5"/>
+        <path class="o" pathLength="1" d="M938.6,167V160.5"/>
+        <path class="o" pathLength="1" d="M928.6,162.3L930.8,160.5L939.2,160.5L941.4,162.3"/>
+        <path class="o" pathLength="1" d="M932.05,160.5V159.3"/>
+        <path class="o" pathLength="1" d="M937.95,160.5V159.3"/>
+        <path class="o" pathLength="1" d="M932.05,159.3C931.4,156.6 933.38,154.38 935,153.3C936.62,154.38 938.6,156.6 937.95,159.3"/>
+        <path class="o" pathLength="1" d="M982.2,167H991.8"/>
+        <path class="o" pathLength="1" d="M983.4,167V160.5"/>
+        <path class="o" pathLength="1" d="M985.8,167V160.5"/>
+        <path class="o" pathLength="1" d="M988.2,167V160.5"/>
+        <path class="o" pathLength="1" d="M990.6,167V160.5"/>
+        <path class="o" pathLength="1" d="M980.6,162.3L982.8,160.5L991.2,160.5L993.4,162.3"/>
+        <path class="o" pathLength="1" d="M984.05,160.5V159.3"/>
+        <path class="o" pathLength="1" d="M989.95,160.5V159.3"/>
+        <path class="o" pathLength="1" d="M984.05,159.3C983.4,156.6 985.38,154.38 987,153.3C988.62,154.38 990.6,156.6 989.95,159.3"/>
+        <path class="o" pathLength="1" d="M951,167V143"/>
+        <path class="o" pathLength="1" d="M971,167V143"/>
+        <path class="o" pathLength="1" d="M948,145.3L950.4,143L971.6,143L974,145.3"/>
+        <path class="o" pathLength="1" d="M951.5,141H970.5"/>
+        <path class="o" pathLength="1" d="M951.5,130.5H970.5"/>
+        <path class="o" pathLength="1" d="M951.5,143V130.5"/>
+        <path class="o" pathLength="1" d="M970.5,143V130.5"/>
+        <path class="o" pathLength="1" d="M950.2,131.6L951,129.8L971,129.8L971.8,131.6"/>
+        <path class="o" pathLength="1" d="M952,129.8A9,9 0 0 1 970,129.8"/>
+        <path class="o" pathLength="1" d="M957.8,120.8H964.2"/>
+        <path class="o" pathLength="1" d="M959,120.8V116.8"/>
+        <path class="o" pathLength="1" d="M960.33,120.8V116.8"/>
+        <path class="o" pathLength="1" d="M961.67,120.8V116.8"/>
+        <path class="o" pathLength="1" d="M963,120.8V116.8"/>
+        <path class="o" pathLength="1" d="M956.2,118.6L958.4,116.8L963.6,116.8L965.8,118.6"/>
+        <path class="o" pathLength="1" d="M959.36,116.8V115.6"/>
+        <path class="o" pathLength="1" d="M962.64,116.8V115.6"/>
+        <path class="o" pathLength="1" d="M959.36,115.6C959,114.07 960.1,112.81 961,112.2C961.9,112.81 963,114.07 962.64,115.6"/>
+        <path class="d" pathLength="1" d="M930,204H992"/>
+        <path class="d" pathLength="1" d="M930,191.3H951"/>
+        <path class="d" pathLength="1" d="M971,191.3H992"/>
+        <path class="d" pathLength="1" d="M946.3,203V197.5C946.3,195.69 947.2,194.53 947.8,194.2C948.4,194.53 949.3,195.69 949.3,197.5V203"/>
+        <path class="d" pathLength="1" d="M946.3,177.5H949.3V186.5H946.3Z"/>
+        <path class="d" pathLength="1" d="M941.4,203V197.5C941.4,195.69 942.3,194.53 942.9,194.2C943.5,194.53 944.4,195.69 944.4,197.5V203"/>
+        <path class="d" pathLength="1" d="M941.4,177.5H944.4V186.5H941.4Z"/>
+        <path class="d" pathLength="1" d="M936.5,203V197.5C936.5,195.69 937.4,194.53 938,194.2C938.6,194.53 939.5,195.69 939.5,197.5V203"/>
+        <path class="d" pathLength="1" d="M936.5,177.5H939.5V186.5H936.5Z"/>
+        <path class="d" pathLength="1" d="M931.6,203V197.5C931.6,195.69 932.5,194.53 933.1,194.2C933.7,194.53 934.6,195.69 934.6,197.5V203"/>
+        <path class="d" pathLength="1" d="M931.6,177.5H934.6V186.5H931.6Z"/>
+        <path class="d" pathLength="1" d="M972.7,203V197.5C972.7,195.69 973.6,194.53 974.2,194.2C974.8,194.53 975.7,195.69 975.7,197.5V203"/>
+        <path class="d" pathLength="1" d="M972.7,177.5H975.7V186.5H972.7Z"/>
+        <path class="d" pathLength="1" d="M977.6,203V197.5C977.6,195.69 978.5,194.53 979.1,194.2C979.7,194.53 980.6,195.69 980.6,197.5V203"/>
+        <path class="d" pathLength="1" d="M977.6,177.5H980.6V186.5H977.6Z"/>
+        <path class="d" pathLength="1" d="M982.5,203V197.5C982.5,195.69 983.4,194.53 984,194.2C984.6,194.53 985.5,195.69 985.5,197.5V203"/>
+        <path class="d" pathLength="1" d="M982.5,177.5H985.5V186.5H982.5Z"/>
+        <path class="d" pathLength="1" d="M987.4,203V197.5C987.4,195.69 988.3,194.53 988.9,194.2C989.5,194.53 990.4,195.69 990.4,197.5V203"/>
+        <path class="d" pathLength="1" d="M987.4,177.5H990.4V186.5H987.4Z"/>
+        <path class="d" pathLength="1" d="M953.4,206V178.5"/>
+        <path class="d" pathLength="1" d="M954.8,206V178.5"/>
+        <path class="d" pathLength="1" d="M953.4,178.5Q953.4,177.2 952.5,176.7H955.7Q954.8,177.2 954.8,178.5"/>
+        <path class="d" pathLength="1" d="M958,206V178.5"/>
+        <path class="d" pathLength="1" d="M959.4,206V178.5"/>
+        <path class="d" pathLength="1" d="M958,178.5Q958,177.2 957.1,176.7H960.3Q959.4,177.2 959.4,178.5"/>
+        <path class="d" pathLength="1" d="M962.6,206V178.5"/>
+        <path class="d" pathLength="1" d="M964,206V178.5"/>
+        <path class="d" pathLength="1" d="M962.6,178.5Q962.6,177.2 961.7,176.7H964.9Q964,177.2 964,178.5"/>
+        <path class="d" pathLength="1" d="M967.2,206V178.5"/>
+        <path class="d" pathLength="1" d="M968.6,206V178.5"/>
+        <path class="d" pathLength="1" d="M967.2,178.5Q967.2,177.2 966.3,176.7H969.5Q968.6,177.2 968.6,178.5"/>
+        <path class="d" pathLength="1" d="M951,176.7H971"/>
+        <path class="d" pathLength="1" d="M931.6,167.8V171.2"/>
+        <path class="d" pathLength="1" d="M933.5,167.8V171.2"/>
+        <path class="d" pathLength="1" d="M935.4,167.8V171.2"/>
+        <path class="d" pathLength="1" d="M937.3,167.8V171.2"/>
+        <path class="d" pathLength="1" d="M939.2,167.8V171.2"/>
+        <path class="d" pathLength="1" d="M941.1,167.8V171.2"/>
+        <path class="d" pathLength="1" d="M943,167.8V171.2"/>
+        <path class="d" pathLength="1" d="M944.9,167.8V171.2"/>
+        <path class="d" pathLength="1" d="M946.8,167.8V171.2"/>
+        <path class="d" pathLength="1" d="M948.7,167.8V171.2"/>
+        <path class="d" pathLength="1" d="M950.6,167.8V171.2"/>
+        <path class="d" pathLength="1" d="M952.5,167.8V171.2"/>
+        <path class="d" pathLength="1" d="M954.4,167.8V171.2"/>
+        <path class="d" pathLength="1" d="M956.3,167.8V171.2"/>
+        <path class="d" pathLength="1" d="M958.2,167.8V171.2"/>
+        <path class="d" pathLength="1" d="M960.1,167.8V171.2"/>
+        <path class="d" pathLength="1" d="M962,167.8V171.2"/>
+        <path class="d" pathLength="1" d="M963.9,167.8V171.2"/>
+        <path class="d" pathLength="1" d="M965.8,167.8V171.2"/>
+        <path class="d" pathLength="1" d="M967.7,167.8V171.2"/>
+        <path class="d" pathLength="1" d="M969.6,167.8V171.2"/>
+        <path class="d" pathLength="1" d="M971.5,167.8V171.2"/>
+        <path class="d" pathLength="1" d="M973.4,167.8V171.2"/>
+        <path class="d" pathLength="1" d="M975.3,167.8V171.2"/>
+        <path class="d" pathLength="1" d="M977.2,167.8V171.2"/>
+        <path class="d" pathLength="1" d="M979.1,167.8V171.2"/>
+        <path class="d" pathLength="1" d="M981,167.8V171.2"/>
+        <path class="d" pathLength="1" d="M982.9,167.8V171.2"/>
+        <path class="d" pathLength="1" d="M984.8,167.8V171.2"/>
+        <path class="d" pathLength="1" d="M986.7,167.8V171.2"/>
+        <path class="d" pathLength="1" d="M988.6,167.8V171.2"/>
+        <path class="d" pathLength="1" d="M990.5,167.8V171.2"/>
+        <path class="d" pathLength="1" d="M931.4,163.23C931.4,162.16 932.12,161.47 932.6,161.28C933.08,161.47 933.8,162.16 933.8,163.23"/>
+        <path class="d" pathLength="1" d="M933.8,163.23C933.8,162.16 934.52,161.47 935,161.28C935.48,161.47 936.2,162.16 936.2,163.23"/>
+        <path class="d" pathLength="1" d="M936.2,163.23C936.2,162.16 936.92,161.47 937.4,161.28C937.88,161.47 938.6,162.16 938.6,163.23"/>
+        <path class="d" pathLength="1" d="M932.05,159.3H937.95"/>
+        <path class="d" pathLength="1" d="M935,153.3V152.25"/>
+        <path class="d" pathLength="1" d="M934.45,151.7C934.45,151.4 934.7,151.15 935,151.15C935.3,151.15 935.55,151.4 935.55,151.7C935.55,152 935.3,152.25 935,152.25C934.7,152.25 934.45,152 934.45,151.7Z"/>
+        <path class="d" pathLength="1" d="M935,151.15V150.3"/>
+        <path class="d" pathLength="1" d="M983.4,163.23C983.4,162.16 984.12,161.47 984.6,161.28C985.08,161.47 985.8,162.16 985.8,163.23"/>
+        <path class="d" pathLength="1" d="M985.8,163.23C985.8,162.16 986.52,161.47 987,161.28C987.48,161.47 988.2,162.16 988.2,163.23"/>
+        <path class="d" pathLength="1" d="M988.2,163.23C988.2,162.16 988.92,161.47 989.4,161.28C989.88,161.47 990.6,162.16 990.6,163.23"/>
+        <path class="d" pathLength="1" d="M984.05,159.3H989.95"/>
+        <path class="d" pathLength="1" d="M987,153.3V152.25"/>
+        <path class="d" pathLength="1" d="M986.45,151.7C986.45,151.4 986.7,151.15 987,151.15C987.3,151.15 987.55,151.4 987.55,151.7C987.55,152 987.3,152.25 987,152.25C986.7,152.25 986.45,152 986.45,151.7Z"/>
+        <path class="d" pathLength="1" d="M987,151.15V150.3"/>
+        <path class="d" pathLength="1" d="M954,165.5V155C954,152.25 955.8,150.5 957,150C958.2,150.5 960,152.25 960,155V165.5"/>
+        <path class="d" pathLength="1" d="M962,165.5V155C962,152.25 963.8,150.5 965,150C966.2,150.5 968,152.25 968,155V165.5"/>
+        <path class="d" pathLength="1" d="M951,146.5H971"/>
+        <path class="d" pathLength="1" d="M952.55,140.5V132"/>
+        <path class="d" pathLength="1" d="M953.45,140.5V132"/>
+        <path class="d" pathLength="1" d="M955.75,140.5V132"/>
+        <path class="d" pathLength="1" d="M956.65,140.5V132"/>
+        <path class="d" pathLength="1" d="M958.95,140.5V132"/>
+        <path class="d" pathLength="1" d="M959.85,140.5V132"/>
+        <path class="d" pathLength="1" d="M962.15,140.5V132"/>
+        <path class="d" pathLength="1" d="M963.05,140.5V132"/>
+        <path class="d" pathLength="1" d="M965.35,140.5V132"/>
+        <path class="d" pathLength="1" d="M966.25,140.5V132"/>
+        <path class="d" pathLength="1" d="M968.55,140.5V132"/>
+        <path class="d" pathLength="1" d="M969.45,140.5V132"/>
+        <path class="d" pathLength="1" d="M959.36,115.6H962.64"/>
+        <path class="d" pathLength="1" d="M961,112.2V111.29"/>
+        <path class="d" pathLength="1" d="M960.45,110.74C960.45,110.44 960.7,110.19 961,110.19C961.3,110.19 961.55,110.44 961.55,110.74C961.55,111.04 961.3,111.29 961,111.29C960.7,111.29 960.45,111.04 960.45,110.74Z"/>
+        <path class="d" pathLength="1" d="M961,110.19V109.6"/>
+      </g>
+    </g>
+    <g class="b b5" data-name="Rashtrapati Bhavan">
+      <g transform="translate(-583.57 33.7) scale(1.08)" style="--s: 1.08">
+        <path class="o" pathLength="1" d="M766,206H914V212H766Z"/>
+        <path class="o" pathLength="1" d="M768,200H912V206H768Z"/>
+        <path class="o" pathLength="1" d="M806,200L800,206"/>
+        <path class="o" pathLength="1" d="M874,200L880,206"/>
+        <path class="o" pathLength="1" d="M768,200V168.5"/>
+        <path class="o" pathLength="1" d="M804,200V168.5"/>
+        <path class="o" pathLength="1" d="M768,184H804"/>
+        <path class="o" pathLength="1" d="M912,200V168.5"/>
+        <path class="o" pathLength="1" d="M876,200V168.5"/>
+        <path class="o" pathLength="1" d="M876,184H912"/>
+        <path class="o" pathLength="1" d="M805.9,197.5V172"/>
+        <path class="o" pathLength="1" d="M808.1,197.5V172"/>
+        <path class="o" pathLength="1" d="M811.9,197.5V172"/>
+        <path class="o" pathLength="1" d="M814.1,197.5V172"/>
+        <path class="o" pathLength="1" d="M817.9,197.5V172"/>
+        <path class="o" pathLength="1" d="M820.1,197.5V172"/>
+        <path class="o" pathLength="1" d="M823.9,197.5V172"/>
+        <path class="o" pathLength="1" d="M826.1,197.5V172"/>
+        <path class="o" pathLength="1" d="M829.9,197.5V172"/>
+        <path class="o" pathLength="1" d="M832.1,197.5V172"/>
+        <path class="o" pathLength="1" d="M835.9,197.5V172"/>
+        <path class="o" pathLength="1" d="M838.1,197.5V172"/>
+        <path class="o" pathLength="1" d="M841.9,197.5V172"/>
+        <path class="o" pathLength="1" d="M844.1,197.5V172"/>
+        <path class="o" pathLength="1" d="M847.9,197.5V172"/>
+        <path class="o" pathLength="1" d="M850.1,197.5V172"/>
+        <path class="o" pathLength="1" d="M853.9,197.5V172"/>
+        <path class="o" pathLength="1" d="M856.1,197.5V172"/>
+        <path class="o" pathLength="1" d="M859.9,197.5V172"/>
+        <path class="o" pathLength="1" d="M862.1,197.5V172"/>
+        <path class="o" pathLength="1" d="M865.9,197.5V172"/>
+        <path class="o" pathLength="1" d="M868.1,197.5V172"/>
+        <path class="o" pathLength="1" d="M871.9,197.5V172"/>
+        <path class="o" pathLength="1" d="M874.1,197.5V172"/>
+        <path class="o" pathLength="1" d="M768,164.5H912V168.5H768Z"/>
+        <path class="o" pathLength="1" d="M763,166.2L766,162.5L914,162.5L917,166.2"/>
+        <path class="o" pathLength="1" d="M768,156.5H912V162.5H768Z"/>
+        <path class="o" pathLength="1" d="M768.4,156.5H779.6"/>
+        <path class="o" pathLength="1" d="M769.6,156.5V149"/>
+        <path class="o" pathLength="1" d="M772.53,156.5V149"/>
+        <path class="o" pathLength="1" d="M775.47,156.5V149"/>
+        <path class="o" pathLength="1" d="M778.4,156.5V149"/>
+        <path class="o" pathLength="1" d="M766.8,150.8L769,149L779,149L781.2,150.8"/>
+        <path class="o" pathLength="1" d="M770.39,149V147.8"/>
+        <path class="o" pathLength="1" d="M777.61,149V147.8"/>
+        <path class="o" pathLength="1" d="M770.39,147.8C769.6,144.65 772.02,142.06 774,140.8C775.98,142.06 778.4,144.65 777.61,147.8"/>
+        <path class="o" pathLength="1" d="M793.4,156.5H804.6"/>
+        <path class="o" pathLength="1" d="M794.6,156.5V149"/>
+        <path class="o" pathLength="1" d="M797.53,156.5V149"/>
+        <path class="o" pathLength="1" d="M800.47,156.5V149"/>
+        <path class="o" pathLength="1" d="M803.4,156.5V149"/>
+        <path class="o" pathLength="1" d="M791.8,150.8L794,149L804,149L806.2,150.8"/>
+        <path class="o" pathLength="1" d="M795.39,149V147.8"/>
+        <path class="o" pathLength="1" d="M802.61,149V147.8"/>
+        <path class="o" pathLength="1" d="M795.39,147.8C794.6,144.65 797.02,142.06 799,140.8C800.98,142.06 803.4,144.65 802.61,147.8"/>
+        <path class="o" pathLength="1" d="M875.4,156.5H886.6"/>
+        <path class="o" pathLength="1" d="M876.6,156.5V149"/>
+        <path class="o" pathLength="1" d="M879.53,156.5V149"/>
+        <path class="o" pathLength="1" d="M882.47,156.5V149"/>
+        <path class="o" pathLength="1" d="M885.4,156.5V149"/>
+        <path class="o" pathLength="1" d="M873.8,150.8L876,149L886,149L888.2,150.8"/>
+        <path class="o" pathLength="1" d="M877.39,149V147.8"/>
+        <path class="o" pathLength="1" d="M884.61,149V147.8"/>
+        <path class="o" pathLength="1" d="M877.39,147.8C876.6,144.65 879.02,142.06 881,140.8C882.98,142.06 885.4,144.65 884.61,147.8"/>
+        <path class="o" pathLength="1" d="M900.4,156.5H911.6"/>
+        <path class="o" pathLength="1" d="M901.6,156.5V149"/>
+        <path class="o" pathLength="1" d="M904.53,156.5V149"/>
+        <path class="o" pathLength="1" d="M907.47,156.5V149"/>
+        <path class="o" pathLength="1" d="M910.4,156.5V149"/>
+        <path class="o" pathLength="1" d="M898.8,150.8L901,149L911,149L913.2,150.8"/>
+        <path class="o" pathLength="1" d="M902.39,149V147.8"/>
+        <path class="o" pathLength="1" d="M909.61,149V147.8"/>
+        <path class="o" pathLength="1" d="M902.39,147.8C901.6,144.65 904.02,142.06 906,140.8C907.98,142.06 910.4,144.65 909.61,147.8"/>
+        <path class="o" pathLength="1" d="M810,146H870V156.5H810Z"/>
+        <path class="o" pathLength="1" d="M812,141H868V146H812Z"/>
+        <path class="o" pathLength="1" d="M815,141V128"/>
+        <path class="o" pathLength="1" d="M865,141V128"/>
+        <path class="o" pathLength="1" d="M812.5,126H867.5V128H812.5Z"/>
+        <path class="o" pathLength="1" d="M813.5,126A26.5,26.5 0 0 1 866.5,126"/>
+        <path class="o" pathLength="1" d="M836.8,96H843.2V99.5H836.8Z"/>
+        <path class="o" pathLength="1" d="M835,94.5H845"/>
+        <path class="o" pathLength="1" d="M840,96V80"/>
+        <path class="o" pathLength="1" d="M840,80.5C844.8,78.9 849.6,82.1 856,80.5V90.5C849.6,92.1 844.8,88.9 840,90.5"/>
+        <path class="d" pathLength="1" d="M768,202.5H912"/>
+        <path class="d" pathLength="1" d="M804.5,201.5H875.5"/>
+        <path class="d" pathLength="1" d="M803,203H877"/>
+        <path class="d" pathLength="1" d="M801.5,204.5H878.5"/>
+        <path class="d" pathLength="1" d="M768,186H804"/>
+        <path class="d" pathLength="1" d="M771.3,198V191C771.3,189.24 772.32,188.12 773,187.8C773.68,188.12 774.7,189.24 774.7,191V198"/>
+        <path class="d" pathLength="1" d="M771.5,172.5H774.5V181H771.5Z"/>
+        <path class="d" pathLength="1" d="M777.6,198V191C777.6,189.24 778.62,188.12 779.3,187.8C779.98,188.12 781,189.24 781,191V198"/>
+        <path class="d" pathLength="1" d="M777.8,172.5H780.8V181H777.8Z"/>
+        <path class="d" pathLength="1" d="M783.9,198V191C783.9,189.24 784.92,188.12 785.6,187.8C786.28,188.12 787.3,189.24 787.3,191V198"/>
+        <path class="d" pathLength="1" d="M784.1,172.5H787.1V181H784.1Z"/>
+        <path class="d" pathLength="1" d="M790.2,198V191C790.2,189.24 791.22,188.12 791.9,187.8C792.58,188.12 793.6,189.24 793.6,191V198"/>
+        <path class="d" pathLength="1" d="M790.4,172.5H793.4V181H790.4Z"/>
+        <path class="d" pathLength="1" d="M796.5,198V191C796.5,189.24 797.52,188.12 798.2,187.8C798.88,188.12 799.9,189.24 799.9,191V198"/>
+        <path class="d" pathLength="1" d="M796.7,172.5H799.7V181H796.7Z"/>
+        <path class="d" pathLength="1" d="M876,186H912"/>
+        <path class="d" pathLength="1" d="M879.3,198V191C879.3,189.24 880.32,188.12 881,187.8C881.68,188.12 882.7,189.24 882.7,191V198"/>
+        <path class="d" pathLength="1" d="M879.5,172.5H882.5V181H879.5Z"/>
+        <path class="d" pathLength="1" d="M885.6,198V191C885.6,189.24 886.62,188.12 887.3,187.8C887.98,188.12 889,189.24 889,191V198"/>
+        <path class="d" pathLength="1" d="M885.8,172.5H888.8V181H885.8Z"/>
+        <path class="d" pathLength="1" d="M891.9,198V191C891.9,189.24 892.92,188.12 893.6,187.8C894.28,188.12 895.3,189.24 895.3,191V198"/>
+        <path class="d" pathLength="1" d="M892.1,172.5H895.1V181H892.1Z"/>
+        <path class="d" pathLength="1" d="M898.2,198V191C898.2,189.24 899.22,188.12 899.9,187.8C900.58,188.12 901.6,189.24 901.6,191V198"/>
+        <path class="d" pathLength="1" d="M898.4,172.5H901.4V181H898.4Z"/>
+        <path class="d" pathLength="1" d="M904.5,198V191C904.5,189.24 905.52,188.12 906.2,187.8C906.88,188.12 907.9,189.24 907.9,191V198"/>
+        <path class="d" pathLength="1" d="M904.7,172.5H907.7V181H904.7Z"/>
+        <path class="d" pathLength="1" d="M805.3,197.5H808.7V200H805.3Z"/>
+        <path class="d" pathLength="1" d="M805.9,172Q805.9,170.6 804.8,170.1H809.2Q808.1,170.6 808.1,172"/>
+        <path class="d" pathLength="1" d="M805.2,170.1V171.4"/>
+        <path class="d" pathLength="1" d="M808.8,170.1V171.4"/>
+        <path class="d" pathLength="1" d="M811.3,197.5H814.7V200H811.3Z"/>
+        <path class="d" pathLength="1" d="M811.9,172Q811.9,170.6 810.8,170.1H815.2Q814.1,170.6 814.1,172"/>
+        <path class="d" pathLength="1" d="M811.2,170.1V171.4"/>
+        <path class="d" pathLength="1" d="M814.8,170.1V171.4"/>
+        <path class="d" pathLength="1" d="M817.3,197.5H820.7V200H817.3Z"/>
+        <path class="d" pathLength="1" d="M817.9,172Q817.9,170.6 816.8,170.1H821.2Q820.1,170.6 820.1,172"/>
+        <path class="d" pathLength="1" d="M817.2,170.1V171.4"/>
+        <path class="d" pathLength="1" d="M820.8,170.1V171.4"/>
+        <path class="d" pathLength="1" d="M823.3,197.5H826.7V200H823.3Z"/>
+        <path class="d" pathLength="1" d="M823.9,172Q823.9,170.6 822.8,170.1H827.2Q826.1,170.6 826.1,172"/>
+        <path class="d" pathLength="1" d="M823.2,170.1V171.4"/>
+        <path class="d" pathLength="1" d="M826.8,170.1V171.4"/>
+        <path class="d" pathLength="1" d="M829.3,197.5H832.7V200H829.3Z"/>
+        <path class="d" pathLength="1" d="M829.9,172Q829.9,170.6 828.8,170.1H833.2Q832.1,170.6 832.1,172"/>
+        <path class="d" pathLength="1" d="M829.2,170.1V171.4"/>
+        <path class="d" pathLength="1" d="M832.8,170.1V171.4"/>
+        <path class="d" pathLength="1" d="M835.3,197.5H838.7V200H835.3Z"/>
+        <path class="d" pathLength="1" d="M835.9,172Q835.9,170.6 834.8,170.1H839.2Q838.1,170.6 838.1,172"/>
+        <path class="d" pathLength="1" d="M835.2,170.1V171.4"/>
+        <path class="d" pathLength="1" d="M838.8,170.1V171.4"/>
+        <path class="d" pathLength="1" d="M841.3,197.5H844.7V200H841.3Z"/>
+        <path class="d" pathLength="1" d="M841.9,172Q841.9,170.6 840.8,170.1H845.2Q844.1,170.6 844.1,172"/>
+        <path class="d" pathLength="1" d="M841.2,170.1V171.4"/>
+        <path class="d" pathLength="1" d="M844.8,170.1V171.4"/>
+        <path class="d" pathLength="1" d="M847.3,197.5H850.7V200H847.3Z"/>
+        <path class="d" pathLength="1" d="M847.9,172Q847.9,170.6 846.8,170.1H851.2Q850.1,170.6 850.1,172"/>
+        <path class="d" pathLength="1" d="M847.2,170.1V171.4"/>
+        <path class="d" pathLength="1" d="M850.8,170.1V171.4"/>
+        <path class="d" pathLength="1" d="M853.3,197.5H856.7V200H853.3Z"/>
+        <path class="d" pathLength="1" d="M853.9,172Q853.9,170.6 852.8,170.1H857.2Q856.1,170.6 856.1,172"/>
+        <path class="d" pathLength="1" d="M853.2,170.1V171.4"/>
+        <path class="d" pathLength="1" d="M856.8,170.1V171.4"/>
+        <path class="d" pathLength="1" d="M859.3,197.5H862.7V200H859.3Z"/>
+        <path class="d" pathLength="1" d="M859.9,172Q859.9,170.6 858.8,170.1H863.2Q862.1,170.6 862.1,172"/>
+        <path class="d" pathLength="1" d="M859.2,170.1V171.4"/>
+        <path class="d" pathLength="1" d="M862.8,170.1V171.4"/>
+        <path class="d" pathLength="1" d="M865.3,197.5H868.7V200H865.3Z"/>
+        <path class="d" pathLength="1" d="M865.9,172Q865.9,170.6 864.8,170.1H869.2Q868.1,170.6 868.1,172"/>
+        <path class="d" pathLength="1" d="M865.2,170.1V171.4"/>
+        <path class="d" pathLength="1" d="M868.8,170.1V171.4"/>
+        <path class="d" pathLength="1" d="M871.3,197.5H874.7V200H871.3Z"/>
+        <path class="d" pathLength="1" d="M871.9,172Q871.9,170.6 870.8,170.1H875.2Q874.1,170.6 874.1,172"/>
+        <path class="d" pathLength="1" d="M871.2,170.1V171.4"/>
+        <path class="d" pathLength="1" d="M874.8,170.1V171.4"/>
+        <path class="d" pathLength="1" d="M768,166.5H912"/>
+        <path class="d" pathLength="1" d="M806,157.3V161.7"/>
+        <path class="d" pathLength="1" d="M808,157.3V161.7"/>
+        <path class="d" pathLength="1" d="M810,157.3V161.7"/>
+        <path class="d" pathLength="1" d="M812,157.3V161.7"/>
+        <path class="d" pathLength="1" d="M814,157.3V161.7"/>
+        <path class="d" pathLength="1" d="M816,157.3V161.7"/>
+        <path class="d" pathLength="1" d="M818,157.3V161.7"/>
+        <path class="d" pathLength="1" d="M820,157.3V161.7"/>
+        <path class="d" pathLength="1" d="M822,157.3V161.7"/>
+        <path class="d" pathLength="1" d="M824,157.3V161.7"/>
+        <path class="d" pathLength="1" d="M826,157.3V161.7"/>
+        <path class="d" pathLength="1" d="M828,157.3V161.7"/>
+        <path class="d" pathLength="1" d="M830,157.3V161.7"/>
+        <path class="d" pathLength="1" d="M832,157.3V161.7"/>
+        <path class="d" pathLength="1" d="M834,157.3V161.7"/>
+        <path class="d" pathLength="1" d="M836,157.3V161.7"/>
+        <path class="d" pathLength="1" d="M838,157.3V161.7"/>
+        <path class="d" pathLength="1" d="M840,157.3V161.7"/>
+        <path class="d" pathLength="1" d="M842,157.3V161.7"/>
+        <path class="d" pathLength="1" d="M844,157.3V161.7"/>
+        <path class="d" pathLength="1" d="M846,157.3V161.7"/>
+        <path class="d" pathLength="1" d="M848,157.3V161.7"/>
+        <path class="d" pathLength="1" d="M850,157.3V161.7"/>
+        <path class="d" pathLength="1" d="M852,157.3V161.7"/>
+        <path class="d" pathLength="1" d="M854,157.3V161.7"/>
+        <path class="d" pathLength="1" d="M856,157.3V161.7"/>
+        <path class="d" pathLength="1" d="M858,157.3V161.7"/>
+        <path class="d" pathLength="1" d="M860,157.3V161.7"/>
+        <path class="d" pathLength="1" d="M862,157.3V161.7"/>
+        <path class="d" pathLength="1" d="M864,157.3V161.7"/>
+        <path class="d" pathLength="1" d="M866,157.3V161.7"/>
+        <path class="d" pathLength="1" d="M868,157.3V161.7"/>
+        <path class="d" pathLength="1" d="M870,157.3V161.7"/>
+        <path class="d" pathLength="1" d="M872,157.3V161.7"/>
+        <path class="d" pathLength="1" d="M874,157.3V161.7"/>
+        <path class="d" pathLength="1" d="M769.6,152.15C769.6,150.91 770.48,150.12 771.07,149.9C771.65,150.12 772.53,150.91 772.53,152.15"/>
+        <path class="d" pathLength="1" d="M772.53,152.15C772.53,150.91 773.41,150.12 774,149.9C774.59,150.12 775.47,150.91 775.47,152.15"/>
+        <path class="d" pathLength="1" d="M775.47,152.15C775.47,150.91 776.35,150.12 776.93,149.9C777.52,150.12 778.4,150.91 778.4,152.15"/>
+        <path class="d" pathLength="1" d="M770.39,147.8H777.61"/>
+        <path class="d" pathLength="1" d="M774,140.8V139.61"/>
+        <path class="d" pathLength="1" d="M773.38,138.99C773.38,138.65 773.66,138.38 774,138.38C774.34,138.38 774.62,138.65 774.62,138.99C774.62,139.33 774.34,139.61 774,139.61C773.66,139.61 773.38,139.33 773.38,138.99Z"/>
+        <path class="d" pathLength="1" d="M774,138.38V137.4"/>
+        <path class="d" pathLength="1" d="M794.6,152.15C794.6,150.91 795.48,150.12 796.07,149.9C796.65,150.12 797.53,150.91 797.53,152.15"/>
+        <path class="d" pathLength="1" d="M797.53,152.15C797.53,150.91 798.41,150.12 799,149.9C799.59,150.12 800.47,150.91 800.47,152.15"/>
+        <path class="d" pathLength="1" d="M800.47,152.15C800.47,150.91 801.35,150.12 801.93,149.9C802.52,150.12 803.4,150.91 803.4,152.15"/>
+        <path class="d" pathLength="1" d="M795.39,147.8H802.61"/>
+        <path class="d" pathLength="1" d="M799,140.8V139.61"/>
+        <path class="d" pathLength="1" d="M798.38,138.99C798.38,138.65 798.66,138.38 799,138.38C799.34,138.38 799.62,138.65 799.62,138.99C799.62,139.33 799.34,139.61 799,139.61C798.66,139.61 798.38,139.33 798.38,138.99Z"/>
+        <path class="d" pathLength="1" d="M799,138.38V137.4"/>
+        <path class="d" pathLength="1" d="M876.6,152.15C876.6,150.91 877.48,150.12 878.07,149.9C878.65,150.12 879.53,150.91 879.53,152.15"/>
+        <path class="d" pathLength="1" d="M879.53,152.15C879.53,150.91 880.41,150.12 881,149.9C881.59,150.12 882.47,150.91 882.47,152.15"/>
+        <path class="d" pathLength="1" d="M882.47,152.15C882.47,150.91 883.35,150.12 883.93,149.9C884.52,150.12 885.4,150.91 885.4,152.15"/>
+        <path class="d" pathLength="1" d="M877.39,147.8H884.61"/>
+        <path class="d" pathLength="1" d="M881,140.8V139.61"/>
+        <path class="d" pathLength="1" d="M880.38,138.99C880.38,138.65 880.66,138.38 881,138.38C881.34,138.38 881.62,138.65 881.62,138.99C881.62,139.33 881.34,139.61 881,139.61C880.66,139.61 880.38,139.33 880.38,138.99Z"/>
+        <path class="d" pathLength="1" d="M881,138.38V137.4"/>
+        <path class="d" pathLength="1" d="M901.6,152.15C901.6,150.91 902.48,150.12 903.07,149.9C903.65,150.12 904.53,150.91 904.53,152.15"/>
+        <path class="d" pathLength="1" d="M904.53,152.15C904.53,150.91 905.41,150.12 906,149.9C906.59,150.12 907.47,150.91 907.47,152.15"/>
+        <path class="d" pathLength="1" d="M907.47,152.15C907.47,150.91 908.35,150.12 908.93,149.9C909.52,150.12 910.4,150.91 910.4,152.15"/>
+        <path class="d" pathLength="1" d="M902.39,147.8H909.61"/>
+        <path class="d" pathLength="1" d="M906,140.8V139.61"/>
+        <path class="d" pathLength="1" d="M905.38,138.99C905.38,138.65 905.66,138.38 906,138.38C906.34,138.38 906.62,138.65 906.62,138.99C906.62,139.33 906.34,139.61 906,139.61C905.66,139.61 905.38,139.33 905.38,138.99Z"/>
+        <path class="d" pathLength="1" d="M906,138.38V137.4"/>
+        <path class="d" pathLength="1" d="M814,148.5H836V154H814Z"/>
+        <path class="d" pathLength="1" d="M844,148.5H866V154H844Z"/>
+        <path class="d" pathLength="1" d="M815,131H865"/>
+        <path class="d" pathLength="1" d="M815,134.5H865"/>
+        <path class="d" pathLength="1" d="M815,138H865"/>
+        <path class="d" pathLength="1" d="M816.5,130V139"/>
+        <path class="d" pathLength="1" d="M819,130V139"/>
+        <path class="d" pathLength="1" d="M821.5,130V139"/>
+        <path class="d" pathLength="1" d="M824,130V139"/>
+        <path class="d" pathLength="1" d="M826.5,130V139"/>
+        <path class="d" pathLength="1" d="M829,130V139"/>
+        <path class="d" pathLength="1" d="M831.5,130V139"/>
+        <path class="d" pathLength="1" d="M834,130V139"/>
+        <path class="d" pathLength="1" d="M836.5,130V139"/>
+        <path class="d" pathLength="1" d="M839,130V139"/>
+        <path class="d" pathLength="1" d="M841.5,130V139"/>
+        <path class="d" pathLength="1" d="M844,130V139"/>
+        <path class="d" pathLength="1" d="M846.5,130V139"/>
+        <path class="d" pathLength="1" d="M849,130V139"/>
+        <path class="d" pathLength="1" d="M851.5,130V139"/>
+        <path class="d" pathLength="1" d="M854,130V139"/>
+        <path class="d" pathLength="1" d="M856.5,130V139"/>
+        <path class="d" pathLength="1" d="M859,130V139"/>
+        <path class="d" pathLength="1" d="M861.5,130V139"/>
+        <path class="d" pathLength="1" d="M815.44,122.55A24.8,24.8 0 0 1 864.56,122.55"/>
+        <path class="d" pathLength="1" d="M836.8,97.6H843.2"/>
+        <path class="d" pathLength="1" d="M840,83.83C844.8,82.23 849.6,85.43 856,83.83"/>
+        <path class="d" pathLength="1" d="M840,87.17C844.8,85.57 849.6,88.77 856,87.17"/>
+        <path class="d" pathLength="1" d="M846.7,85.5C846.7,84.78 847.28,84.2 848,84.2C848.72,84.2 849.3,84.78 849.3,85.5C849.3,86.22 848.72,86.8 848,86.8C847.28,86.8 846.7,86.22 846.7,85.5Z"/>
+      </g>
+    </g>
+  </g>
+  <g class="mark">
+    <svg x="274.52" y="8" width="96" height="96" viewBox="0 0 262.7 262.7">
+<g>
+	<g>
+		<g>
+			<g>
+				<g>
+					<path class="st0" d="M20.2,132.3c5.5,0,8.8-3.5,9.2-9.7c0-1.1,0-2.6-0.2-4.2V118h-4.6l0.4,0.9c0.2,0.7,0.4,2.2,0.4,3.5
+						c-0.2,3.1-2.6,5.1-5.9,4.8c-3.5-0.2-5.5-2.4-5.5-5.5c0-1.1,0.2-2.2,1.1-3.3l0.7-0.9l-4.4-0.7l-0.2,0.4
+						c-0.7,1.3-0.9,2.9-1.1,4.2c-0.4,6.4,3.1,10.6,9.5,10.8C19.7,132.3,19.9,132.3,20.2,132.3z"/>
+				</g>
+			</g>
+			<g>
+				<g>
+					<path class="st0" d="M21,110.8c1.3,0.4,2.4,0.4,3.5,0.4c4.2,0,7.3-2.4,8.6-6.6c0.7-2.6,0.4-4.8-0.7-7c-1.3-2.2-3.5-3.7-6.4-4.6
+						c-1.1-0.4-2.4-0.4-3.3-0.4c-4.2,0-7.3,2.4-8.6,6.6C12.5,104.6,15.1,109,21,110.8z M18,100.4c0.7-2.4,2.6-2.9,4.2-2.9
+						c0.7,0,1.5,0.2,2.4,0.4c2,0.7,3.5,1.5,4.2,2.9c0.4,0.9,0.7,1.8,0.2,2.9c-0.7,2.4-2.6,2.9-4.2,2.9c-0.9,0-1.5-0.2-2.4-0.4
+						C19.7,105.3,17.1,103.3,18,100.4z"/>
+				</g>
+			</g>
+			<g>
+				<g>
+					<path class="st0" d="M40,86.1l-6.4-3.5l0.2-0.4c0.7-1.1,1.1-1.1,2-0.9l6.4,0.9l2.4-4.6l-8.4-0.9c-0.7,0-1.1,0-1.5,0
+						c0-1.8-0.9-3.5-2.6-4.4c-0.9-0.4-1.8-0.7-2.6-0.7c-3.1,0-4.6,3.1-6.2,5.9L21,81.7l16.7,9L40,86.1z M30.1,80.2l-0.2,0.4
+						l-3.1-1.5l0.2-0.4c0.7-1.3,1.5-2.6,2.9-2c0.4,0.2,0.7,0.4,0.9,0.9C30.9,78.4,30.5,79.5,30.1,80.2z"/>
+				</g>
+			</g>
+			<g>
+				<g>
+					<polygon class="st0" points="50.3,69.4 41.7,62.4 54,65.2 57.3,61 42.8,48.9 39.7,52.5 48.5,59.7 36.2,56.9 32.7,61 47.4,73.1 
+											"/>
+				</g>
+			</g>
+			<g>
+				<g>
+					<polygon class="st0" points="71.6,48.9 69,45.9 63.7,50 61.3,47.2 66.1,43.2 63.5,40.1 58.7,44.1 56.9,41.7 62.2,37.5 
+						59.5,34.2 50.5,41.5 62.4,56.2 					"/>
+				</g>
+			</g>
+			<g>
+				<g>
+					<polygon class="st0" points="87.3,39.5 85.3,36 79.3,39.3 72.1,26.3 67.9,28.7 77.1,45.2 					"/>
+				</g>
+			</g>
+			<g>
+				<g>
+					<polygon class="st0" points="103.3,33.3 101.8,29.6 95.6,31.8 90.6,17.9 85.9,19.5 92.3,37.3 					"/>
+				</g>
+			</g>
+			<g>
+				<g>
+					<path class="st0" d="M122.5,30.2c0.4,0,0.7,0,1.1,0c2.6-0.2,4.6-1.1,5.7-2.4s1.5-3.3,1.3-5.5l-0.9-11.9l-4.8,0.2l0.9,10.8
+						c0.2,3.7-1.3,4.4-2.6,4.6c-0.2,0-0.2,0-0.4,0c-1.1,0-2.6-0.4-3.1-4.2L118.8,11l-4.8,0.4l0.9,11.9
+						C115.6,27.8,118.1,30.2,122.5,30.2z"/>
+				</g>
+			</g>
+			<g>
+				<g>
+					<polygon class="st0" points="144.2,19 148.2,30.7 153.7,31.6 156.1,12.6 151.5,12 150,23.2 146,11.3 140.7,10.7 138.1,29.4 
+						142.7,30 					"/>
+				</g>
+			</g>
+			<g>
+				<g>
+					<polygon class="st0" points="170.4,16.8 165.8,15.3 160.1,33.3 164.7,34.9 					"/>
+				</g>
+			</g>
+			<g>
+				<g>
+					<polygon class="st0" points="194.2,27.4 190,25.2 180.8,34.6 182.7,21.7 178.1,19.2 175.3,39.3 180.1,41.5 					"/>
+				</g>
+			</g>
+			<g>
+				<g>
+					<polygon class="st0" points="199,54.7 201.4,51.4 196.2,47.2 198.4,44.3 203.2,48.1 205.8,44.8 201,41 202.8,38.6 208,42.8 
+						210.7,39.5 201.4,32.4 189.8,47.4 					"/>
+				</g>
+			</g>
+			<g>
+				<g>
+					<path class="st0" d="M206.9,62.6l5.5-4.8l0.2,0.4c0.7,0.9,0.7,1.1,0.2,2.2l-3.1,5.7l3.5,4l3.7-7.5c0.2-0.2,0.4-0.9,0.4-1.5
+						c1.5,0.7,3.5,0.4,5.1-0.9c4.2-3.5,0.9-7.3-1.5-10.1l-3.1-3.5l-14.3,12.5L206.9,62.6z M218.2,52.7l0.2,0.4
+						c0.7,0.9,1.3,1.8,1.3,2.4c0,0.4-0.2,0.7-0.7,0.9c-0.2,0.4-0.7,0.4-0.9,0.4c-0.9,0-1.8-0.9-2.2-1.5l-0.2-0.4L218.2,52.7z"/>
+				</g>
+			</g>
+			<g>
+				<g>
+					<path class="st0" d="M224.5,77.8c-0.9,0.7-2.2-0.4-2.6-1.3c-0.7-1.1-0.9-2.2-0.9-3.7v-1.1l-4.4,2l0.2,0.9
+						c0.4,1.5,0.7,2.4,1.5,4c1.5,2.6,3.5,4,5.7,4c1.1,0,2-0.2,3.1-0.9c3.3-2,2.9-5.1,2.4-7.5c-0.2-1.5-0.4-2.6,0.2-3.1
+						c0.4-0.2,0.7-0.2,0.9-0.2c0.9,0,1.5,0.9,1.8,1.1c0.7,0.9,0.9,2,1.1,3.1l0.2,0.9l4-1.8v-0.4c-0.2-1.3-0.9-2.6-1.8-4.2
+						c-2-3.5-5.5-4.6-8.6-2.6c-3.3,2-2.9,5.1-2.4,7.3C225.2,76.2,225.4,77.3,224.5,77.8z"/>
+				</g>
+			</g>
+			<g>
+				<g>
+					
+						<rect x="225.2" y="86.8" transform="matrix(0.9259 -0.3777 0.3777 0.9259 -16.3094 95.2348)" class="st0" width="18.9" height="4.8"/>
+				</g>
+			</g>
+			<g>
+				<g>
+					<polygon class="st0" points="244.3,101.3 230,104.8 231.1,109.4 245.7,105.9 246.8,110.8 250.7,109.9 247.2,95.4 243.2,96.5 
+											"/>
+				</g>
+			</g>
+			<g>
+				<g>
+					<polygon class="st0" points="233.1,123.3 233.3,128.2 240.8,127.7 252.7,133.9 252.4,128.6 245.4,125.3 252,121.1 251.6,115.4 
+						240.6,123.1 					"/>
+				</g>
+			</g>
+			<g>
+				<g>
+					<polygon class="st0" points="23.9,167.7 27.9,166.6 26.3,160.9 29.2,160 30.9,166.2 34.9,164.9 31.8,154.3 13.6,159.6 
+						14.9,164.2 22.4,162 					"/>
+				</g>
+			</g>
+			<g>
+				<g>
+					<path class="st0" d="M40.8,183.6c0.7-2.2,0.4-4.6-0.7-7c-1.8-3.5-4.4-5.3-7.9-5.3c-1.5,0-3.3,0.4-5.1,1.3
+						c-2.9,1.3-4.6,3.3-5.5,5.7c-0.7,2.2-0.4,4.6,0.7,7c1.8,3.3,4.4,5.3,7.9,5.3c1.5,0,3.3-0.4,5.1-1.3
+						C38.2,187.8,40.2,186,40.8,183.6z M33.4,184.7c-1.1,0.7-2.4,0.9-3.5,0.9c-1.8,0-2.9-0.7-3.5-2.2c-0.4-1.1-0.7-2-0.2-2.9
+						c0.4-1.3,1.8-2.6,3.5-3.5c1.1-0.4,2.2-0.9,3.3-0.9c1.8,0,2.9,0.7,3.5,2.2c0.4,1.1,0.7,2,0.2,2.9
+						C36.2,182.5,35.1,183.8,33.4,184.7z"/>
+				</g>
+			</g>
+			<g>
+				<g>
+					<path class="st0" d="M54,198.3l-8.6,6.8c-2.2,1.8-4,2-5.3,0.4c-0.4-0.7-0.7-1.3-0.7-2c0.2-0.9,0.9-2,2.2-3.1l8.6-6.8l-3.1-3.7
+						l-9.5,7.5c-2,1.5-3.1,3.3-3.1,5.3c0,1.8,0.7,3.5,2.2,5.5c1.8,2.4,3.7,3.5,5.9,3.5c1.5,0,3.1-0.7,4.6-2l9.5-7.7L54,198.3z"/>
+				</g>
+			</g>
+			<g>
+				<g>
+					<polygon class="st0" points="70.1,213.7 63.1,222.5 65.7,210.2 61.5,206.7 49.4,221.4 53.2,224.5 60.2,215.7 57.6,228 
+						61.7,231.5 73.8,216.8 					"/>
+				</g>
+			</g>
+			<g>
+				<g>
+					<path class="st0" d="M84.2,222.7l-4.8-2.4l-8.6,16.9l4.8,2.4c2.4,1.1,4.4,1.8,6.4,1.8c3.3,0,5.9-1.8,7.7-5.3
+						C92.5,230.4,90.6,226,84.2,222.7z M85.1,234c-0.9,2-2.6,3.1-4.6,3.1c-0.9,0-1.5-0.2-2.4-0.7l-1.1-0.7l4.8-9.7l1.1,0.7
+						c1.3,0.7,2.2,1.8,2.6,2.9C85.9,231.1,85.7,232.4,85.1,234z"/>
+				</g>
+			</g>
+			<g>
+				<g>
+					<polygon class="st0" points="94.7,247.8 106,250.9 107.1,246.9 100.5,245.2 101.3,241.7 107.5,243.2 108.6,239.2 102.4,237.7 
+						103.1,234.6 109.9,236.4 110.8,232.4 99.6,229.6 					"/>
+				</g>
+			</g>
+			<g>
+				<g>
+					<path class="st0" d="M122.7,234l-5.5-0.2l-1.1,18.9l5.5,0.2c0.4,0,0.9,0,1.3,0c6.4,0,9.7-3.1,10.1-9c0.2-2.9-0.4-5.3-2-7
+						C129.3,235.3,126.6,234.2,122.7,234z M122.5,248.9h-1.3l0.7-10.8h1.3c2.6,0.2,5.1,2.2,4.8,5.7
+						C127.7,247.4,125.1,248.9,122.5,248.9z"/>
+				</g>
+			</g>
+			<g>
+				<g>
+					<path class="st0" d="M149.7,232.4l-3.3,20l5.1-1.1l0.7-4.2l6.2-1.3l2.4,3.7l5.3-1.1l-11.2-16.9L149.7,232.4z M152.8,243
+						l0.7-5.1l2.6,4.2L152.8,243z"/>
+				</g>
+			</g>
+			<g>
+				<g>
+					<polygon class="st0" points="167.8,242.3 169.5,246.9 173.9,245.2 172.4,240.8 					"/>
+				</g>
+			</g>
+			<g>
+				<g>
+					<path class="st0" d="M177,223.2l-4.8,2.6l9,16.7l4.8-2.6c6.4-3.5,7.9-7.9,5.1-13.4C188.2,220.8,183.4,219.7,177,223.2z
+						 M184.7,235.9l-1.1,0.7l-5.1-9.5l1.1-0.7c0.7-0.4,1.5-0.7,2.4-0.7c2,0,3.5,1.1,4.6,2.9C188.5,231.8,186.9,234.6,184.7,235.9z"
+						/>
+				</g>
+			</g>
+			<g>
+				<g>
+					<polygon class="st0" points="194.8,229.1 197.5,233.1 201.4,230.2 198.8,226.3 					"/>
+				</g>
+			</g>
+			<g>
+				<g>
+					<polygon class="st0" points="202.3,204.7 201.4,212.2 205.6,212.8 206.1,209.8 215.1,218.8 218.6,215.5 205.2,201.8 					"/>
+				</g>
+			</g>
+			<g>
+				<g>
+					<path class="st0" d="M228.1,194.8c-1.5-1.1-3.3-1.3-5.3-0.7c0-1.8-0.9-3.5-2.2-4.4c-2.4-1.8-5.5-0.7-7.9,2.4
+						c-2.2,3.1-2,6.2,0.7,8.1c1.3,0.9,3.1,1.1,4.6,0.7c-0.2,2,0.4,3.5,2,4.6c1.1,0.9,2.2,1.1,3.3,1.1c2,0,3.7-1.1,5.5-3.3
+						c1.3-1.8,2-3.5,1.8-5.3C230.3,197,229.4,195.9,228.1,194.8z M219,196.1c-0.7,0.4-1.3,0.9-2,0.9c-0.2,0-0.7,0-0.9-0.2
+						c-0.9-0.7-0.4-1.8,0-2.4c0.2-0.4,0.7-0.7,1.1-0.7c0.2,0,0.7,0.2,1.1,0.4C219,194.6,219.3,195.5,219,196.1z M225.6,201.4
+						c-0.7,0.9-1.8,1.1-2.6,0.4c-0.7-0.7-1.1-1.3-0.9-2.6c1.3-0.9,2.4-1.1,3.3-0.4c0.4,0.2,0.7,0.7,0.7,1.1S225.9,201,225.6,201.4z"
+						/>
+				</g>
+			</g>
+			<g>
+				<g>
+					<path class="st0" d="M236.6,176.3c-3.3-1.5-6.4-0.7-7.9,2.4c-0.4,0.9-0.7,1.8-0.4,2.6c-1.1-0.9-2.2-2.4-1.3-4.4
+						c0.4-0.9,1.1-1.5,1.8-2.2l0.7-0.4l-3.5-2.4l-0.4,0.4c-0.9,0.9-1.8,2-2.4,3.3c-0.9,2-1.1,3.7-0.4,5.5c1.1,3.1,4.2,5.3,6.6,6.4
+						c2.2,1.1,4,1.5,5.5,1.5c2.4,0,4.2-1.1,5.5-3.5C241.9,181.6,240.6,178.3,236.6,176.3z M236.6,183.4c-0.2,0.7-0.9,0.9-1.5,0.9
+						c-0.4,0-1.1-0.2-1.5-0.4c-0.9-0.4-1.5-1.1-1.8-1.5c-0.2-0.4,0-0.7,0-1.1c0.2-0.7,0.7-0.9,1.5-0.9c0.4,0,1.1,0.2,1.8,0.4
+						c0.9,0.4,1.3,0.9,1.5,1.5C236.9,182.7,236.6,183.1,236.6,183.4z"/>
+				</g>
+			</g>
+			<g>
+				<g>
+					<path class="st0" d="M243.5,157c-3.7-1.1-6.8,0.7-7.9,4.2c0,0.4-0.2,0.7-0.2,0.9l-2.2-0.7l2-6.6l-3.7-1.1l-3.3,11l10.6,3.3
+						v-0.9c0-1.1,0.2-2,0.4-3.1c0.2-0.9,1.3-3.1,3.3-2.6c2.2,0.7,1.8,3.1,1.5,3.7c-0.4,1.3-1.1,2.2-1.8,3.1l-0.7,0.7l4.4,1.5
+						l0.2-0.4c0.7-1.3,1.3-2.9,1.8-4c0.7-2.2,0.7-4.2-0.2-5.9C246.8,158.7,245.2,157.6,243.5,157z"/>
+				</g>
+			</g>
+		</g>
+		<g>
+			<g>
+				<path class="st0" d="M104.3,111l-0.9-0.5C98,107.6,89,102.3,89,98.3V77.4h31.2v21.1c0,3.5-8.2,8.5-15,12L104.3,111z M92.8,90.9
+					v7.4c0.4,1.3,5.6,5.1,11.5,8.3c6.1-3.2,11.4-6.9,12.1-8.3v-7.4H92.8z M92.8,87.1h23.6v-5.9H92.8V87.1z"/>
+			</g>
+		</g>
+		<g>
+			<g>
+				<path class="st0" d="M131.3,262.6C58.9,262.6,0,203.7,0,131.3S58.9,0,131.3,0s131.3,58.9,131.3,131.3S203.7,262.6,131.3,262.6z
+					 M131.3,3.8C61,3.8,3.8,61,3.8,131.3S61,258.8,131.3,258.8s127.5-57.2,127.5-127.5S201.6,3.8,131.3,3.8z"/>
+			</g>
+		</g>
+		<g>
+			<g>
+				<path class="st0" d="M131.3,227.2c-52.9,0-95.9-43-95.9-95.9s43-95.9,95.9-95.9s95.9,43,95.9,95.9
+					C227.2,184.2,184.2,227.2,131.3,227.2z M131.3,39.2c-50.8,0-92.1,41.3-92.1,92.1s41.3,92.1,92.1,92.1s92.1-41.3,92.1-92.1
+					S182.1,39.2,131.3,39.2z"/>
+			</g>
+		</g>
+		<g>
+			<g>
+			</g>
+		</g>
+		<g>
+			<g>
+				<path class="st0" d="M158.1,111l-0.9-0.5c-5.5-2.9-14.7-8.2-14.7-12.2V77.4h31.2v21.1c0,2.8-5,6.8-14.7,12L158.1,111z
+					 M146.3,98.2c0.5,1.4,5.8,5.2,11.8,8.4c5.9-3.2,11.1-6.9,11.8-8.3v-2.6L158.1,88l-11.8,7.7V98.2z M169.9,98.3L169.9,98.3
+					L169.9,98.3z M158.1,83.4l11.8,7.7v-9.9h-23.5v9.9L158.1,83.4z"/>
+			</g>
+		</g>
+		<g>
+			<g>
+				
+					<rect x="111.3" y="141.9" transform="matrix(0.999 -4.550182e-02 4.550182e-02 0.999 -6.4349 5.5141)" class="st0" width="13.2" height="4.4"/>
+			</g>
+		</g>
+		<g>
+			<g>
+				
+					<rect x="111.3" y="154" transform="matrix(0.999 -4.528212e-02 4.528212e-02 0.999 -6.9523 5.4991)" class="st0" width="13.2" height="4.4"/>
+			</g>
+		</g>
+		<g>
+			<g>
+				
+					<rect x="111.3" y="166.1" transform="matrix(0.999 -4.528212e-02 4.528212e-02 0.999 -7.5002 5.5115)" class="st0" width="13.2" height="4.4"/>
+			</g>
+		</g>
+		<g>
+			<g>
+				<rect x="96.4" y="144.2" class="st0" width="7.2" height="6.1"/>
+			</g>
+		</g>
+		<g>
+			<g>
+				<rect x="96.4" y="161.6" class="st0" width="7.2" height="6.1"/>
+			</g>
+		</g>
+		<g>
+			<g>
+				<path class="st0" d="M129.5,180.7c-0.1-0.1-2.6-1.9-4.2-1.7c-7.9,1.3-20.7,1-21.3,1h-1.9v-47.4l2.1,0.2c0.1,0,10.1,1.1,19.1-0.5
+					c3.1-0.8,6.3,0,7.9,0.6c1.6-0.5,5.1-1.4,8.3-0.6c9,1.6,19,0.5,19.1,0.5l2.1-0.2V180h-1.9c-0.6,0-13.7,0.3-21.6-1
+					c-1.7-0.3-3.8,1.3-4.4,1.7l-1.6,1.1L129.5,180.7z M126.1,175.1c2.2-0.1,3.8,1,5,1.8c1.4-0.9,4.2-2.2,6.9-1.7c5.8,1,15,1,19,1
+					v-39.4c-3.6,0.3-11,0.6-18.1-0.7h-0.2c-2.9-0.8-6.6,0.5-6.6,0.5l-0.9,0.2H131c0,0-3.6-1.5-6.5-0.7h-0.2
+					c-7.1,1.3-14.5,1-18.1,0.7v39.4c3.9,0,13.1,0,19-1C125.7,175.1,125.7,175.1,126.1,175.1z"/>
+			</g>
+		</g>
+		<g>
+			<g>
+				
+					<rect x="142.8" y="149.6" transform="matrix(4.537537e-02 -0.999 0.999 4.537537e-02 -17.6213 294.0034)" class="st0" width="4.4" height="13.2"/>
+			</g>
+		</g>
+		<g>
+			<g>
+				
+					<rect x="142.8" y="161.7" transform="matrix(4.537537e-02 -0.999 0.999 4.537537e-02 -29.7122 305.5572)" class="st0" width="4.4" height="13.2"/>
+			</g>
+		</g>
+		<g>
+			<g>
+				<rect x="159.4" y="144.2" class="st0" width="7" height="6.1"/>
+			</g>
+		</g>
+		<g>
+			<g>
+				<rect x="159.4" y="161.6" class="st0" width="7" height="6.1"/>
+			</g>
+		</g>
+		<g>
+			<g>
+				
+					<rect x="142.8" y="137.7" transform="matrix(3.784857e-02 -0.9993 0.9993 3.784857e-02 -4.6885 283.7716)" class="st0" width="4.4" height="13.2"/>
+			</g>
+		</g>
+	</g>
+	<g>
+		<g>
+			<path class="st0" d="M131.1,218.8l-0.8-0.3c-0.6-0.3-14.9-6.7-29.5-18c-19.6-15.2-30.2-31.8-30.5-48.2c0.7-35,0.1-81.6,0.1-82.1
+				v-1.9h122v1.9c0,0.5-0.1,47.7-0.1,82.1c0,16.4-10.5,33-30.4,48.2c-14.8,11.3-29.4,17.8-30,18L131.1,218.8z M133,119.7v93.9
+				c11.4-5.6,55.3-29.3,55.3-61.5c0-10.2,0-21.6,0-32.5L133,119.7L133,119.7z M74.5,119.7c0,10.9-0.1,22.2-0.3,32.5
+				c0.4,19,16,35.1,29,45.1c10.6,8.2,21.2,13.9,26,16.3v-93.9C129.2,119.7,74.5,119.7,74.5,119.7z M74.5,115.9h113.9
+				c0-20.1,0.1-38.1,0.1-43.9H74.2C74.3,77.8,74.5,95.7,74.5,115.9z"/>
+		</g>
+	</g>
+</g>
+    </svg>
+  </g>
+  <rect class="rule" x="292.86" y="111" width="59.33" height="2" fill="#B31B1B"/>
+  </g>
+</svg>
+    <span class="loading-label">Loading</span>
+  </div>
+</body>
+</html>

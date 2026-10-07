@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact | Cornell Club of Delhi</title>
+  <meta name="description" content="Join the Cornell Club of Delhi, RSVP to events, or get in touch.">
+  <meta name="theme-color" content="#B31B1B">
+  <link rel="icon" type="image/svg+xml" href="assets/cornell_seal_simple_web_b31b1b.svg">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Cornell Club of Delhi, home">
+        <img src="assets/cornell_seal_simple_web_white.svg" alt="Cornell University seal" width="52" height="52">
+        <span class="brand-text"><strong>Cornell Club of Delhi</strong><span>Cornell Alumni in India</span></span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span class="nav-toggle-bars" aria-hidden="true"></span> Menu
+      </button>
+      <nav id="site-nav" class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="community.html">Community</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="contact.html" aria-current="page">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <h1>Contact</h1>
+        <p>Join the club, RSVP to an event, or just say hello. We’d love to hear from you.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container split" style="align-items:start">
+        <div>
+          <h2>Send us a message</h2>
+          <div id="contact-soon" class="notice">
+            <p><strong>Our club inbox is on its way.</strong> We’re setting up the club’s email and social channels. This page will let you message us directly as soon as they’re live.</p>
+            <p>Meanwhile, the <a href="https://alumni.cornell.edu" rel="noopener">Cornell Alumni Association</a> can connect you with Cornellians around the world.</p>
+          </div>
+          <!-- Shown automatically once a club email is set in the admin -->
+          <form id="contact-form" class="form" novalidate hidden>
+            <div class="field-row">
+              <div class="field">
+                <label for="name">Full name</label>
+                <input id="name" name="name" type="text" autocomplete="name" required>
+              </div>
+              <div class="field">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" autocomplete="email" required>
+              </div>
+            </div>
+            <div class="field-row">
+              <div class="field">
+                <label for="class">Cornell affiliation (optional)</label>
+                <input id="class" name="class" type="text" placeholder="e.g. ILR ’12, parent of ’28">
+              </div>
+              <div class="field">
+                <label for="topic">I’d like to</label>
+                <select id="topic" name="topic">
+                  <option>Join the club</option>
+                  <option>RSVP to an event</option>
+                  <option>Volunteer</option>
+                  <option>Suggest an event</option>
+                  <option>Something else</option>
+                </select>
+              </div>
+            </div>
+            <div class="field">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" required></textarea>
+            </div>
+            <div>
+              <button class="btn btn-primary" type="submit">Send Message</button>
+            </div>
+            <p class="form-note">Sending opens your email app with your message ready to go.</p>
+            <p id="form-status" class="form-status" role="status">Thanks! Your email app should now be open. Just hit send.</p>
+          </form>
+        </div>
+        <div>
+          <h2>Other ways to reach us</h2>
+          <ul class="contact-list">
+            <li><strong>Location</strong><span data-field="contact.location">New Delhi, India · serving Delhi, Gurugram, Noida and NCR</span></li>
+            <!-- Each row below appears only once its value is set in the admin -->
+            <li data-link="email" hidden><strong>Email</strong><a>Email</a></li>
+            <li data-link="linkedin" hidden><strong>LinkedIn</strong><a>Cornell Club of Delhi on LinkedIn</a></li>
+            <li data-link="instagram" hidden><strong>Instagram</strong><a>Cornell Club of Delhi on Instagram</a></li>
+            <li data-link="facebook" hidden><strong>Facebook</strong><a>Cornell Club of Delhi on Facebook</a></li>
+            <li data-link="whatsapp" hidden><strong>WhatsApp</strong><a>Join our WhatsApp group</a></li>
+          </ul>
+          <p style="margin-top:24px">Moving to Delhi or just visiting? Once our channels are live, write to us and we’ll connect you with Cornellians nearby.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/cornell_seal_simple_web_white.svg" alt="" width="64" height="64">
+          <div>
+            <h3>Cornell Club of Delhi</h3>
+            <p data-field="footer.about">A volunteer-run community of Cornell alumni, students, parents and friends in Delhi NCR.</p>
+            <p class="footer-social" data-social-footer hidden></p>
+          </div>
+        </div>
+        <div>
+          <h3>Explore</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="community.html">Community</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Cornell</h3>
+          <ul data-list="footer-links">
+            <li><a href="https://www.cornell.edu" rel="noopener">Cornell University</a></li>
+            <li><a href="https://alumni.cornell.edu" rel="noopener">Cornell Alumni Association</a></li>
+            <li><a href="https://global.cornell.edu" rel="noopener">Cornell Global</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; <span id="year">2026</span> Cornell Club of Delhi. Cornell name and seal are trademarks of Cornell University.
+      </div>
+    </div>
+  </footer>
+  <script src="js/main.js"></script>
+</body>
+</html>

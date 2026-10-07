@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Club Admin</title>
+  <meta name="theme-color" content="#B31B1B">
+  <link rel="icon" type="image/svg+xml" href="../assets/cornell_seal_simple_web_b31b1b.svg">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+  <header class="bar">
+    <div class="bar-inner">
+      <div class="bar-brand">
+        <img src="../assets/cornell_seal_simple_web_white.svg" alt="Cornell University seal" width="40" height="40">
+        <span><strong>Cornell Club of Delhi</strong><small>Site admin</small></span>
+      </div>
+      <nav class="bar-actions" id="bar-actions" hidden>
+        <a href="../index.html" target="_blank" rel="noopener">View site</a>
+        <button type="button" id="logout" class="link-btn">Log out</button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="app">
+    <p id="boot" class="center muted">Loading…</p>
+
+    <!-- One-time setup: stores the repo token, encrypted with the shared password -->
+    <section id="setup" class="panel narrow" hidden>
+      <h1>Set up the admin</h1>
+      <p>This runs once. You’ll connect the admin to the site’s GitHub repository and choose the shared password everyone uses to log in. The token is encrypted in your browser with that password before it’s saved. Neither the token nor the password is stored anywhere in plain text.</p>
+      <form id="setup-form" class="stack">
+        <div class="row-2">
+          <label>GitHub owner<input name="owner" required autocomplete="off"></label>
+          <label>Repository<input name="repo" required autocomplete="off"></label>
+        </div>
+        <div class="row-2">
+          <label>Branch<input name="branch" value="main" required autocomplete="off"></label>
+          <label>Site folder in repo<input name="root" value="site/" autocomplete="off"></label>
+        </div>
+        <label>Fine-grained GitHub token
+          <input name="token" type="password" required autocomplete="off" spellcheck="false">
+          <small>Create one at github.com → Settings → Developer settings → Fine-grained tokens. Give it access to <em>only this repository</em> with <em>Contents: Read and write</em>.</small>
+        </label>
+        <label>Shared admin password
+          <input name="password" type="password" required minlength="12" autocomplete="new-password">
+          <small>At least 12 characters. A short phrase works well, e.g. four unrelated words.</small>
+        </label>
+        <label>Confirm password<input name="confirm" type="password" required minlength="12" autocomplete="new-password"></label>
+        <button class="btn" type="submit">Connect and save</button>
+        <p class="msg" id="setup-msg" role="status"></p>
+      </form>
+    </section>
+
+    <!-- Login -->
+    <section id="login" class="panel narrow" hidden>
+      <h1>Admin login</h1>
+      <p>Enter the shared admin password to update the website.</p>
+      <form id="login-form" class="stack">
+        <label>Password<input name="password" type="password" required autocomplete="current-password" autofocus></label>
+        <button class="btn" type="submit">Log in</button>
+        <p class="msg" id="login-msg" role="status"></p>
+      </form>
+    </section>
+
+    <!-- Editor -->
+    <section id="editor" hidden>
+      <nav class="tabs" role="tablist" aria-label="Sections">
+        <button type="button" role="tab" data-tab="home" aria-selected="true">Home page</button>
+        <button type="button" role="tab" data-tab="events" aria-selected="false">Events</button>
+        <button type="button" role="tab" data-tab="stories" aria-selected="false">Community posts</button>
+        <button type="button" role="tab" data-tab="committee" aria-selected="false">Committee</button>
+        <button type="button" role="tab" data-tab="links" aria-selected="false">Contact &amp; links</button>
+        <button type="button" role="tab" data-tab="settings" aria-selected="false">Settings</button>
+      </nav>
+      <p class="toast" id="toast" role="status" aria-live="polite" hidden></p>
+
+      <div class="tabpanel" data-panel="home">
+        <div class="panel">
+          <h2>Home page</h2>
+          <p class="muted">Edit the words on the home page. Layout and design stay the same. Leave a field blank to use the original text.</p>
+          <form id="home-form" class="stack"></form>
+        </div>
+      </div>
+
+      <div class="tabpanel" data-panel="events" hidden>
+        <div class="panel">
+          <div class="panel-head">
+            <h2>Events</h2>
+            <button type="button" class="btn" id="event-new">Add event</button>
+          </div>
+          <form id="event-form" class="stack card-form" hidden>
+            <h3 id="event-form-title">New event</h3>
+            <label>Title<input name="title" required maxlength="120"></label>
+            <div class="row-3">
+              <label>Date<input name="date" type="date" required></label>
+              <label>Time<input name="time" placeholder="7:00 PM" maxlength="40"></label>
+              <label>Category
+                <select name="category" required>
+                  <option value="social">Social</option>
+                  <option value="professional">Professional</option>
+                  <option value="students">Students</option>
+                </select>
+              </label>
+            </div>
+            <label>Venue<input name="venue" placeholder="Venue name, area" maxlength="160"></label>
+            <label>Description<textarea name="description" rows="3" maxlength="600"></textarea></label>
+            <label>RSVP link
+              <input name="rsvp" type="url" placeholder="https://forms.gle/…">
+              <small>This event’s own registration link. Leave blank to show “RSVP link coming soon”.</small>
+            </label>
+            <div class="actions">
+              <button class="btn" type="submit">Save event</button>
+              <button class="btn btn-ghost" type="button" data-cancel>Cancel</button>
+            </div>
+          </form>
+          <ul class="items" id="event-items"></ul>
+        </div>
+      </div>
+
+      <div class="tabpanel" data-panel="stories" hidden>
+        <div class="panel">
+          <div class="panel-head">
+            <h2>Community posts</h2>
+            <button type="button" class="btn" id="post-new">New post</button>
+          </div>
+          <p class="muted">Posts appear under “From the community” on the Community page, each with its own story page.</p>
+          <form id="post-form" class="stack card-form" hidden>
+            <h3 id="post-form-title">New post</h3>
+            <label>Title<input name="title" required maxlength="140"></label>
+            <div class="row-2">
+              <label>Date<input name="date" type="date" required></label>
+              <label>Author (optional)<input name="author" maxlength="80"></label>
+            </div>
+            <label>Photo (optional)
+              <input name="photo" type="file" accept="image/jpeg,image/png,image/webp">
+              <small>Large photos are resized to 1600px wide before upload.</small>
+            </label>
+            <div id="photo-preview" class="photo-preview" hidden>
+              <img alt="">
+              <button type="button" class="btn btn-ghost" id="photo-remove">Remove photo</button>
+            </div>
+            <label>Photo description (alt text)<input name="imageAlt" maxlength="200" placeholder="What’s in the photo, for screen readers"></label>
+            <label>Photo caption (optional)<input name="caption" maxlength="200"></label>
+            <label>Story<textarea name="body" rows="8" required placeholder="Write the post. Leave a blank line between paragraphs."></textarea></label>
+            <div class="actions">
+              <button class="btn" type="submit">Publish post</button>
+              <button class="btn btn-ghost" type="button" data-cancel>Cancel</button>
+            </div>
+          </form>
+          <ul class="items" id="post-items"></ul>
+        </div>
+      </div>
+
+      <div class="tabpanel" data-panel="committee" hidden>
+        <div class="panel">
+          <h2>Committee</h2>
+          <p class="muted">Shown on the Community page. The section stays hidden until at least one person is added.</p>
+          <form id="committee-form" class="stack">
+            <div id="committee-rows" class="repeater"></div>
+            <div class="actions">
+              <button type="button" class="btn btn-ghost" id="committee-add">Add person</button>
+              <button type="submit" class="btn">Save committee</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="tabpanel" data-panel="links" hidden>
+        <div class="panel">
+          <h2>Contact &amp; links</h2>
+          <p class="muted">Anything left blank stays hidden on the site, so no visitor ever sees a link that goes nowhere.</p>
+          <form id="links-form" class="stack">
+            <fieldset>
+              <legend>Contact</legend>
+              <label>Club email<input name="email" type="email" placeholder="hello@example.org">
+                <small>Also turns on the message form on the Contact page.</small></label>
+              <label>Location line<input name="location" maxlength="160"></label>
+            </fieldset>
+            <fieldset>
+              <legend>Social</legend>
+              <label>LinkedIn URL<input name="linkedin" type="url" placeholder="https://www.linkedin.com/…"></label>
+              <label>Instagram URL<input name="instagram" type="url" placeholder="https://www.instagram.com/…"></label>
+              <label>Facebook URL<input name="facebook" type="url" placeholder="https://www.facebook.com/…"></label>
+              <label>WhatsApp group invite URL<input name="whatsapp" type="url" placeholder="https://chat.whatsapp.com/…"></label>
+            </fieldset>
+            <fieldset>
+              <legend>Footer links (all pages)</legend>
+              <div id="footer-rows" class="repeater"></div>
+              <button type="button" class="btn btn-ghost" id="footer-add">Add link</button>
+            </fieldset>
+            <div class="actions"><button type="submit" class="btn">Save contact &amp; links</button></div>
+          </form>
+        </div>
+      </div>
+
+      <div class="tabpanel" data-panel="settings" hidden>
+        <div class="panel">
+          <h2>Settings</h2>
+          <p id="repo-info" class="muted"></p>
+          <form id="password-form" class="stack card-form">
+            <h3>Change the shared password</h3>
+            <label>New password<input name="password" type="password" minlength="12" required autocomplete="new-password"></label>
+            <label>Confirm new password<input name="confirm" type="password" minlength="12" required autocomplete="new-password"></label>
+            <button class="btn" type="submit">Change password</button>
+          </form>
+          <form id="token-form" class="stack card-form">
+            <h3>Replace the GitHub token</h3>
+            <p class="muted">Do this when the token is about to expire. The current password stays the same.</p>
+            <label>New fine-grained token<input name="token" type="password" required autocomplete="off" spellcheck="false"></label>
+            <label>Current password<input name="password" type="password" required autocomplete="current-password"></label>
+            <button class="btn" type="submit">Replace token</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="admin.js"></script>
+</body>
+</html>

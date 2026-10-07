@@ -1,0 +1,77 @@
+{
+  "home": {
+    "hero": {
+      "eyebrow": "Cornell Alumni in Delhi NCR",
+      "title": "Far above Cayuga’s waters, and right here in Delhi.",
+      "lead": "The Cornell Club of Delhi brings together alumni, students, parents and friends of Cornell University across the National Capital Region.",
+      "primaryButton": "Join the Club",
+      "secondaryButton": "Upcoming Events"
+    },
+    "whatWeDo": {
+      "eyebrow": "What we do",
+      "title": "Staying connected to Cornell, together",
+      "intro": "Whether you graduated last spring or decades ago, there’s a place for you here.",
+      "cards": [
+        {
+          "title": "Social gatherings",
+          "text": "Monthly meetups, festive celebrations and an annual gala for Cornellians and their families."
+        },
+        {
+          "title": "Professional network",
+          "text": "Panels, mentoring and introductions across industries, from policy and finance to tech and hospitality."
+        },
+        {
+          "title": "Future Cornellians",
+          "text": "Send-off parties for admitted students and alumni interviews for applicants from the region."
+        }
+      ]
+    },
+    "community": {
+      "eyebrow": "Our community",
+      "title": "Any person, any study, any city",
+      "text": "Ezra Cornell’s founding vision was an institution where any person can find instruction in any study. Our club carries that spirit into Delhi, welcoming every Cornellian, whatever their college, class year or career path.",
+      "button": "Meet the Community",
+      "quote": "“I would found an institution where any person can find instruction in any study.”",
+      "quoteCite": "Ezra Cornell, 1865"
+    },
+    "upcoming": {
+      "eyebrow": "Coming up",
+      "title": "Next on the calendar",
+      "link": "See all events →",
+      "empty": "Our next gatherings are being planned. Check back soon."
+    },
+    "cta": {
+      "title": "Are you a Cornellian in Delhi?",
+      "text": "Get on our mailing list for event invitations and club news.",
+      "button": "Get in Touch"
+    }
+  },
+  "contact": {
+    "email": "",
+    "location": "New Delhi, India · serving Delhi, Gurugram, Noida and NCR"
+  },
+  "social": {
+    "linkedin": "",
+    "instagram": "",
+    "facebook": "",
+    "whatsapp": ""
+  },
+  "footer": {
+    "about": "A volunteer-run community of Cornell alumni, students, parents and friends in Delhi NCR.",
+    "links": [
+      {
+        "label": "Cornell University",
+        "url": "https://www.cornell.edu"
+      },
+      {
+        "label": "Cornell Alumni Association",
+        "url": "https://alumni.cornell.edu"
+      },
+      {
+        "label": "Cornell Global",
+        "url": "https://global.cornell.edu"
+      }
+    ]
+  },
+  "committee": []
+}

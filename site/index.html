@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cornell Club of Delhi</title>
+  <meta name="description" content="The Cornell Club of Delhi connects Cornell alumni, students, parents and friends across Delhi NCR.">
+  <meta name="theme-color" content="#B31B1B">
+  <link rel="icon" type="image/svg+xml" href="assets/cornell_seal_simple_web_b31b1b.svg">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Cornell Club of Delhi, home">
+        <img src="assets/cornell_seal_simple_web_white.svg" alt="Cornell University seal" width="52" height="52">
+        <span class="brand-text"><strong>Cornell Club of Delhi</strong><span>Cornell Alumni in India</span></span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span class="nav-toggle-bars" aria-hidden="true"></span> Menu
+      </button>
+      <nav id="site-nav" class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="community.html">Community</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <section class="hero">
+      <div class="container hero-inner">
+        <div>
+          <span class="eyebrow" data-field="home.hero.eyebrow">Cornell Alumni in Delhi NCR</span>
+          <h1 data-field="home.hero.title">Far above Cayuga’s waters, and right here in Delhi.</h1>
+          <p class="lead" data-field="home.hero.lead">The Cornell Club of Delhi brings together alumni, students, parents and friends of Cornell University across the National Capital Region.</p>
+          <div class="hero-actions">
+            <a class="btn btn-light" href="contact.html" data-field="home.hero.primaryButton">Join the Club</a>
+            <a class="btn btn-outline-light" href="events.html" data-field="home.hero.secondaryButton">Upcoming Events</a>
+          </div>
+        </div>
+        <img class="hero-seal" src="assets/cornell_seal_simple_web_white.svg" alt="Cornell University seal" width="300" height="300">
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow" data-field="home.whatWeDo.eyebrow">What we do</span>
+          <h2 data-field="home.whatWeDo.title">Staying connected to Cornell, together</h2>
+          <p data-field="home.whatWeDo.intro">Whether you graduated last spring or decades ago, there’s a place for you here.</p>
+        </div>
+        <div class="grid grid-3">
+          <article class="card">
+            <h3 data-field="home.whatWeDo.cards.0.title">Social gatherings</h3>
+            <p data-field="home.whatWeDo.cards.0.text">Monthly meetups, festive celebrations and an annual gala for Cornellians and their families.</p>
+          </article>
+          <article class="card">
+            <h3 data-field="home.whatWeDo.cards.1.title">Professional network</h3>
+            <p data-field="home.whatWeDo.cards.1.text">Panels, mentoring and introductions across industries, from policy and finance to tech and hospitality.</p>
+          </article>
+          <article class="card">
+            <h3 data-field="home.whatWeDo.cards.2.title">Future Cornellians</h3>
+            <p data-field="home.whatWeDo.cards.2.text">Send-off parties for admitted students and alumni interviews for applicants from the region.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="container split">
+        <div>
+          <span class="eyebrow" data-field="home.community.eyebrow">Our community</span>
+          <h2 data-field="home.community.title">Any person, any study, any city</h2>
+          <p data-field="home.community.text">Ezra Cornell’s founding vision was an institution where any person can find instruction in any study. Our club carries that spirit into Delhi, welcoming every Cornellian, whatever their college, class year or career path.</p>
+          <a class="btn btn-primary" href="community.html" data-field="home.community.button">Meet the Community</a>
+        </div>
+        <blockquote class="quote">
+          <span data-field="home.community.quote">“I would found an institution where any person can find instruction in any study.”</span>
+          <cite data-field="home.community.quoteCite">Ezra Cornell, 1865</cite>
+        </blockquote>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow" data-field="home.upcoming.eyebrow">Coming up</span>
+          <h2 data-field="home.upcoming.title">Next on the calendar</h2>
+        </div>
+        <!-- Filled from content/events.json -->
+        <div id="next-events"></div>
+        <p style="margin-top:24px"><a href="events.html" data-field="home.upcoming.link">See all events →</a></p>
+      </div>
+    </section>
+
+    <section class="cta-band">
+      <div class="container">
+        <div>
+          <h2 data-field="home.cta.title">Are you a Cornellian in Delhi?</h2>
+          <p data-field="home.cta.text">Get on our mailing list for event invitations and club news.</p>
+        </div>
+        <a class="btn btn-light" href="contact.html" data-field="home.cta.button">Get in Touch</a>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/cornell_seal_simple_web_white.svg" alt="" width="64" height="64">
+          <div>
+            <h3>Cornell Club of Delhi</h3>
+            <p data-field="footer.about">A volunteer-run community of Cornell alumni, students, parents and friends in Delhi NCR.</p>
+            <p class="footer-social" data-social-footer hidden></p>
+          </div>
+        </div>
+        <div>
+          <h3>Explore</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="community.html">Community</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Cornell</h3>
+          <ul data-list="footer-links">
+            <li><a href="https://www.cornell.edu" rel="noopener">Cornell University</a></li>
+            <li><a href="https://alumni.cornell.edu" rel="noopener">Cornell Alumni Association</a></li>
+            <li><a href="https://global.cornell.edu" rel="noopener">Cornell Global</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; <span id="year">2026</span> Cornell Club of Delhi. Cornell name and seal are trademarks of Cornell University.
+      </div>
+    </div>
+  </footer>
+  <script src="js/main.js"></script>
+</body>
+</html>

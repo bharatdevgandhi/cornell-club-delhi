@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Events | Cornell Club of Delhi</title>
+  <meta name="description" content="Upcoming socials, talks and traditions for Cornellians in Delhi NCR.">
+  <meta name="theme-color" content="#B31B1B">
+  <link rel="icon" type="image/svg+xml" href="assets/cornell_seal_simple_web_b31b1b.svg">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Cornell Club of Delhi, home">
+        <img src="assets/cornell_seal_simple_web_white.svg" alt="Cornell University seal" width="52" height="52">
+        <span class="brand-text"><strong>Cornell Club of Delhi</strong><span>Cornell Alumni in India</span></span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span class="nav-toggle-bars" aria-hidden="true"></span> Menu
+      </button>
+      <nav id="site-nav" class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="community.html">Community</a></li>
+          <li><a href="events.html" aria-current="page">Events</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <h1>Events</h1>
+        <p>Socials, talks and traditions for Cornellians in Delhi NCR. All members and guests are welcome unless noted.</p>
+      </div>
+    </section>
+
+    <section class="section" id="upcoming">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Upcoming</span>
+          <h2>Upcoming events</h2>
+        </div>
+        <div id="event-filters" class="filters" role="group" aria-label="Filter events by category">
+          <button type="button" data-filter="all" aria-pressed="true">All</button>
+          <button type="button" data-filter="social" aria-pressed="false">Social</button>
+          <button type="button" data-filter="professional" aria-pressed="false">Professional</button>
+          <button type="button" data-filter="students" aria-pressed="false">Students</button>
+        </div>
+        <p id="event-status" class="event-status" role="status" aria-live="polite"></p>
+        <!-- Filled from content/events.json -->
+        <div id="event-list"></div>
+        <div id="event-empty" class="event-empty" hidden>
+          <p id="event-empty-text">New events are being planned. Check back soon.</p>
+          <a class="btn btn-outline" href="community.html">Explore the community</a>
+        </div>
+        <noscript><p class="event-empty">Turn on JavaScript to see the events calendar.</p></noscript>
+      </div>
+    </section>
+
+    <section class="section" id="past-events" hidden>
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Recently</span>
+          <h2>Past events</h2>
+        </div>
+        <div id="past-list"></div>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Traditions</span>
+          <h2>Annual highlights</h2>
+        </div>
+        <div class="grid grid-3">
+          <article class="card">
+            <h3>Summer Send-Off</h3>
+            <p>Each summer we welcome admitted students and their families before they leave for Ithaca.</p>
+          </article>
+          <article class="card">
+            <h3>Diwali Celebration</h3>
+            <p>A festive evening of food, lights and Cornell spirit.</p>
+          </article>
+          <article class="card">
+            <h3>Cornell Giving Day</h3>
+            <p>A chance to come together and support the causes at Cornell that matter to you.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-band">
+      <div class="container">
+        <div>
+          <h2>Have an event idea?</h2>
+          <p>We’re always looking for hosts, speakers and venues. Tell us what you’d like to see.</p>
+        </div>
+        <a class="btn btn-light" href="contact.html">Suggest an Event</a>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/cornell_seal_simple_web_white.svg" alt="" width="64" height="64">
+          <div>
+            <h3>Cornell Club of Delhi</h3>
+            <p data-field="footer.about">A volunteer-run community of Cornell alumni, students, parents and friends in Delhi NCR.</p>
+            <p class="footer-social" data-social-footer hidden></p>
+          </div>
+        </div>
+        <div>
+          <h3>Explore</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="community.html">Community</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Cornell</h3>
+          <ul data-list="footer-links">
+            <li><a href="https://www.cornell.edu" rel="noopener">Cornell University</a></li>
+            <li><a href="https://alumni.cornell.edu" rel="noopener">Cornell Alumni Association</a></li>
+            <li><a href="https://global.cornell.edu" rel="noopener">Cornell Global</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; <span id="year">2026</span> Cornell Club of Delhi. Cornell name and seal are trademarks of Cornell University.
+      </div>
+    </div>
+  </footer>
+  <script src="js/main.js"></script>
+</body>
+</html>
