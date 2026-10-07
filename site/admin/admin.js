@@ -21,6 +21,11 @@
   var $ = function (sel, root) { return (root || document).querySelector(sel); };
   var $$ = function (sel, root) { return Array.prototype.slice.call((root || document).querySelectorAll(sel)); };
 
+  // Local preview only: http://localhost…/admin/?demo=1 swaps GitHub for an in-memory
+  // copy of the content files. Password "demo". Nothing is saved anywhere.
+  var DEMO = /^(localhost|127\.0\.0\.1)$/.test(location.hostname) && /[?&]demo=1(&|$)/.test(location.search);
+  var demoRepo = {}, demoSha = 0;
+
   var auth = null;     // contents of auth.json
   var session = null;  // { token, owner, repo, branch, root }
   var files = {};      // name -> { data, sha }
@@ -104,8 +109,27 @@
   }
 
   // ------------------------------------------------------------------ GitHub
+  function demoGH(method, path, body) {
+    var m = path.match(/\/contents\/([^?]+)/), p = m ? decodeURIComponent(m[1]) : null;
+    var reply = function (status, data) {
+      return new Promise(function (resolve, reject) {
+        setTimeout(function () {
+          if (status >= 400) { var e = new Error(data.message); e.status = status; reject(e); } else resolve(data);
+        }, 250);
+      });
+    };
+    if (!p) return reply(200, { permissions: { push: true } });
+    if (method === 'GET') return demoRepo[p] ? reply(200, demoRepo[p]) : reply(404, { message: 'Not Found' });
+    if (method === 'DELETE') { delete demoRepo[p]; return reply(200, {}); }
+    var cur = demoRepo[p];
+    if (cur && body.sha !== cur.sha) return reply(409, { message: 'conflict' });
+    demoRepo[p] = { content: body.content, sha: 'demo' + (++demoSha) };
+    return reply(200, { content: { sha: demoRepo[p].sha } });
+  }
+
   function gh(method, path, body, s) {
     s = s || session;
+    if (DEMO) return demoGH(method, path, body);
     return fetch(API + path, {
       method: method,
       headers: {
@@ -170,7 +194,7 @@
       throw e;
     });
   }
-  function afterSave(what) { toast(what + ' The live site updates in about a minute.'); }
+  function afterSave(what) { toast(what + (DEMO ? ' (Demo: kept in this tab only, not published.)' : ' The live site updates in about a minute.')); }
   function fail(e) {
     var m = e && e.message || String(e);
     if (e && e.status === 401) m = 'GitHub rejected the token. It may have expired. Replace it under Settings.';
@@ -178,7 +202,24 @@
   }
 
   // ------------------------------------------------------------------ boot
+  function bootDemo() {
+    var names = ['site.json', 'events.json', 'posts.json'];
+    return Promise.all(names.map(function (n) {
+      return fetch('../content/' + n, { cache: 'no-store' }).then(function (r) { return r.text(); }).then(function (t) {
+        demoRepo['site/content/' + n] = { content: b64.fromText(t), sha: 'demo' + (++demoSha) };
+      });
+    })).then(function () { return encryptToken('demo-token', 'demo'); }).then(function (sealed) {
+      auth = { version: 1, owner: 'demo', repo: 'local-preview', branch: 'main', root: 'site/', token: sealed };
+      var note = el('p', { 'class': 'toast' }, 'Demo mode: a local preview of the admin. Changes are kept in this tab only and never reach the live site.');
+      note.id = 'demo-note';
+      $('#app').insertBefore(note, $('#app').firstChild);
+      $('#login-form').insertAdjacentElement('beforebegin', el('p', { 'class': 'muted' }, 'Demo password: demo'));
+      show('login');
+    });
+  }
+
   function boot() {
+    if (DEMO) return bootDemo();
     fetch('auth.json?v=' + Date.now(), { cache: 'no-store' }).then(function (r) {
       if (r.status === 404) return null;
       if (!r.ok) throw new Error('Could not load admin settings (' + r.status + ').');
